@@ -66,3 +66,48 @@ Select * from Stocks
 Select * from Ventes
 Select * from Ordonnances
 Select * from Utilisateurs
+
+CREATE TABLE DetailsVente (
+    DetailsVenteID INT PRIMARY KEY IDENTITY,
+    VenteID INT FOREIGN KEY REFERENCES Ventes(VenteID),
+    MédicamentID INT FOREIGN KEY REFERENCES Médicaments(MédicamentID),
+    QuantitéVendue INT,
+    PrixVenteUnitaire DECIMAL(10, 2)
+);
+
+CREATE PROCEDURE AjouterAuStock
+    @MédicamentID INT,
+    @QuantitéAjoutée INT
+AS
+BEGIN
+    UPDATE Stocks
+    SET Quantité = Quantité + @QuantitéAjoutée
+    WHERE MédicamentID = @MédicamentID;
+END;
+
+CREATE PROCEDURE VendreMedicament
+    @MédicamentID INT,
+    @QuantitéVendue INT
+AS
+BEGIN
+    UPDATE Stocks
+    SET Quantité = Quantité - @QuantitéVendue
+    WHERE MédicamentID = @MédicamentID;
+END;
+
+CREATE TRIGGER AprèsVente
+ON DetailsVente
+AFTER INSERT
+AS
+BEGIN
+    DECLARE @MédicamentID INT, @QuantitéVendue INT;
+    SELECT @MédicamentID = MédicamentID, @QuantitéVendue = QuantitéVendue FROM inserted;
+    EXEC VendreMedicament @MédicamentID, @QuantitéVendue;
+END;
+
+CREATE VIEW EtatDesStocks AS
+SELECT MédicamentID, SUM(Quantité) as QuantitéTotale
+FROM Stocks
+GROUP BY MédicamentID;
+
+

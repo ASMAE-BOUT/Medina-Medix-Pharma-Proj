@@ -40,8 +40,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvVentes = new System.Windows.Forms.DataGridView();
-            this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.médicamentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSet();
+            this.ventesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -51,21 +53,23 @@
             this.btnRetour = new System.Windows.Forms.Button();
             this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stocksTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.StocksTableAdapter();
-            this.ventesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ventesTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.VentesTableAdapter();
-            this.venteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.réductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.médicamentsTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.MédicamentsTableAdapter();
+            this.médicamentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.désignationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixAchatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prixVenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantitéDisponibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QtéVendue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.médicamentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharma_ProjDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -157,9 +161,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgvVentes);
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(34, 167);
+            this.groupBox2.Location = new System.Drawing.Point(34, 199);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 243);
+            this.groupBox2.Size = new System.Drawing.Size(635, 211);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -170,32 +174,44 @@
             this.dgvVentes.AutoGenerateColumns = false;
             this.dgvVentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.venteIDDataGridViewTextBoxColumn,
-            this.dateDataGridViewTextBoxColumn,
-            this.clientIDDataGridViewTextBoxColumn,
-            this.totalDataGridViewTextBoxColumn,
-            this.réductionDataGridViewTextBoxColumn});
-            this.dgvVentes.DataSource = this.ventesBindingSource;
+            this.médicamentIDDataGridViewTextBoxColumn,
+            this.désignationDataGridViewTextBoxColumn,
+            this.prixAchatDataGridViewTextBoxColumn,
+            this.prixVenteDataGridViewTextBoxColumn,
+            this.quantitéDisponibleDataGridViewTextBoxColumn,
+            this.QtéVendue});
+            this.dgvVentes.DataSource = this.médicamentsBindingSource;
             this.dgvVentes.Location = new System.Drawing.Point(0, 0);
             this.dgvVentes.Name = "dgvVentes";
-            this.dgvVentes.Size = new System.Drawing.Size(539, 243);
+            this.dgvVentes.Size = new System.Drawing.Size(635, 211);
             this.dgvVentes.TabIndex = 0;
+            this.dgvVentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentes_CellContentClick);
             // 
-            // stocksBindingSource1
+            // médicamentsBindingSource
             // 
-            this.stocksBindingSource1.DataMember = "Stocks";
-            this.stocksBindingSource1.DataSource = this.pharma_ProjDataSet;
+            this.médicamentsBindingSource.DataMember = "Médicaments";
+            this.médicamentsBindingSource.DataSource = this.pharma_ProjDataSet;
             // 
             // pharma_ProjDataSet
             // 
             this.pharma_ProjDataSet.DataSetName = "Pharma_ProjDataSet";
             this.pharma_ProjDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // ventesBindingSource
+            // 
+            this.ventesBindingSource.DataMember = "Ventes";
+            this.ventesBindingSource.DataSource = this.pharma_ProjDataSet;
+            // 
+            // stocksBindingSource1
+            // 
+            this.stocksBindingSource1.DataMember = "Stocks";
+            this.stocksBindingSource1.DataSource = this.pharma_ProjDataSet;
+            // 
             // btnAjouter
             // 
             this.btnAjouter.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnAjouter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(641, 47);
+            this.btnAjouter.Location = new System.Drawing.Point(641, 34);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(112, 26);
             this.btnAjouter.TabIndex = 2;
@@ -207,7 +223,7 @@
             // 
             this.btnModifier.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnModifier.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(641, 79);
+            this.btnModifier.Location = new System.Drawing.Point(641, 66);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(112, 26);
             this.btnModifier.TabIndex = 3;
@@ -219,7 +235,7 @@
             // 
             this.btnSupprimer.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnSupprimer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(641, 111);
+            this.btnSupprimer.Location = new System.Drawing.Point(641, 98);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(112, 26);
             this.btnSupprimer.TabIndex = 4;
@@ -231,11 +247,11 @@
             // 
             this.btnActualiser.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnActualiser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualiser.Location = new System.Drawing.Point(641, 143);
+            this.btnActualiser.Location = new System.Drawing.Point(641, 130);
             this.btnActualiser.Name = "btnActualiser";
             this.btnActualiser.Size = new System.Drawing.Size(112, 26);
             this.btnActualiser.TabIndex = 5;
-            this.btnActualiser.Text = "Actualiser";
+            this.btnActualiser.Text = "Finaliser";
             this.btnActualiser.UseVisualStyleBackColor = false;
             this.btnActualiser.Click += new System.EventHandler(this.btnActualiser_Click);
             // 
@@ -245,7 +261,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DeepPink;
-            this.label6.Location = new System.Drawing.Point(675, 387);
+            this.label6.Location = new System.Drawing.Point(682, 392);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 18);
             this.label6.TabIndex = 18;
@@ -255,7 +271,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.pink_pharmacy_logo_hi;
-            this.pictureBox1.Location = new System.Drawing.Point(688, 348);
+            this.pictureBox1.Location = new System.Drawing.Point(695, 353);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -266,7 +282,7 @@
             // 
             this.btnRetour.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnRetour.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRetour.Location = new System.Drawing.Point(641, 175);
+            this.btnRetour.Location = new System.Drawing.Point(641, 162);
             this.btnRetour.Name = "btnRetour";
             this.btnRetour.Size = new System.Drawing.Size(112, 26);
             this.btnRetour.TabIndex = 19;
@@ -283,45 +299,50 @@
             // 
             this.stocksTableAdapter.ClearBeforeFill = true;
             // 
-            // ventesBindingSource
-            // 
-            this.ventesBindingSource.DataMember = "Ventes";
-            this.ventesBindingSource.DataSource = this.pharma_ProjDataSet;
-            // 
             // ventesTableAdapter
             // 
             this.ventesTableAdapter.ClearBeforeFill = true;
             // 
-            // venteIDDataGridViewTextBoxColumn
+            // médicamentsTableAdapter
             // 
-            this.venteIDDataGridViewTextBoxColumn.DataPropertyName = "VenteID";
-            this.venteIDDataGridViewTextBoxColumn.HeaderText = "VenteID";
-            this.venteIDDataGridViewTextBoxColumn.Name = "venteIDDataGridViewTextBoxColumn";
-            this.venteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.médicamentsTableAdapter.ClearBeforeFill = true;
             // 
-            // dateDataGridViewTextBoxColumn
+            // médicamentIDDataGridViewTextBoxColumn
             // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.médicamentIDDataGridViewTextBoxColumn.DataPropertyName = "MédicamentID";
+            this.médicamentIDDataGridViewTextBoxColumn.HeaderText = "MédicamentID";
+            this.médicamentIDDataGridViewTextBoxColumn.Name = "médicamentIDDataGridViewTextBoxColumn";
+            this.médicamentIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // clientIDDataGridViewTextBoxColumn
+            // désignationDataGridViewTextBoxColumn
             // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            this.désignationDataGridViewTextBoxColumn.DataPropertyName = "Désignation";
+            this.désignationDataGridViewTextBoxColumn.HeaderText = "Désignation";
+            this.désignationDataGridViewTextBoxColumn.Name = "désignationDataGridViewTextBoxColumn";
             // 
-            // totalDataGridViewTextBoxColumn
+            // prixAchatDataGridViewTextBoxColumn
             // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            this.prixAchatDataGridViewTextBoxColumn.DataPropertyName = "PrixAchat";
+            this.prixAchatDataGridViewTextBoxColumn.HeaderText = "PrixAchat";
+            this.prixAchatDataGridViewTextBoxColumn.Name = "prixAchatDataGridViewTextBoxColumn";
             // 
-            // réductionDataGridViewTextBoxColumn
+            // prixVenteDataGridViewTextBoxColumn
             // 
-            this.réductionDataGridViewTextBoxColumn.DataPropertyName = "Réduction";
-            this.réductionDataGridViewTextBoxColumn.HeaderText = "Réduction";
-            this.réductionDataGridViewTextBoxColumn.Name = "réductionDataGridViewTextBoxColumn";
+            this.prixVenteDataGridViewTextBoxColumn.DataPropertyName = "PrixVente";
+            this.prixVenteDataGridViewTextBoxColumn.HeaderText = "PrixVente";
+            this.prixVenteDataGridViewTextBoxColumn.Name = "prixVenteDataGridViewTextBoxColumn";
+            // 
+            // quantitéDisponibleDataGridViewTextBoxColumn
+            // 
+            this.quantitéDisponibleDataGridViewTextBoxColumn.DataPropertyName = "QuantitéDisponible";
+            this.quantitéDisponibleDataGridViewTextBoxColumn.HeaderText = "Qté Dispo";
+            this.quantitéDisponibleDataGridViewTextBoxColumn.Name = "quantitéDisponibleDataGridViewTextBoxColumn";
+            // 
+            // QtéVendue
+            // 
+            this.QtéVendue.DataPropertyName = "QuantiteVendue";
+            this.QtéVendue.HeaderText = "Qté Vendue";
+            this.QtéVendue.Name = "QtéVendue";
             // 
             // POSForm
             // 
@@ -347,11 +368,12 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.médicamentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharma_ProjDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ventesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stocksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,10 +405,14 @@
         private System.Windows.Forms.BindingSource stocksBindingSource1;
         private System.Windows.Forms.BindingSource ventesBindingSource;
         private Pharma_ProjDataSetTableAdapters.VentesTableAdapter ventesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn venteIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn réductionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource médicamentsBindingSource;
+        private Pharma_ProjDataSetTableAdapters.MédicamentsTableAdapter médicamentsTableAdapter;
+        private System.Windows.Forms.DataGridView dgvMedicaments;
+        private System.Windows.Forms.DataGridViewTextBoxColumn médicamentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn désignationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixAchatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prixVenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantitéDisponibleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QtéVendue;
     }
 }
