@@ -167,7 +167,7 @@
             this.btnnQuitter.Name = "btnnQuitter";
             this.btnnQuitter.Size = new System.Drawing.Size(108, 32);
             this.btnnQuitter.TabIndex = 16;
-            this.btnnQuitter.Text = "Quitter";
+            this.btnnQuitter.Text = "Retour";
             this.btnnQuitter.UseVisualStyleBackColor = false;
             this.btnnQuitter.Click += new System.EventHandler(this.btnnQuitter_Click);
             // 
@@ -190,6 +190,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DashboardForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tableau_de_Bord";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

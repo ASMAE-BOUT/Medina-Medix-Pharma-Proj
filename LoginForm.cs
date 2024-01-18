@@ -14,7 +14,7 @@ namespace Medina_Medix_Pharma_Proj
 {
     public partial class LoginForm : Form
     {
-        string connectionString = @"Server=DESKTOP-3RKAS3I; Database=Pharma Proj; Integrated Security=True;";
+        string connectionString = @"Server=DESKTOP-3RKAS3I; Database=Pharma Proj; User Id=PharmaLogin; Password=PharmaApp159;";
         public LoginForm()
         {
             InitializeComponent();

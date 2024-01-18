@@ -14,7 +14,7 @@ namespace Medina_Medix_Pharma_Proj
 
     public partial class Clients : Form
     {
-        string connectionString = @"Server=DESKTOP-3RKAS3I; Database=Pharma Proj; Integrated Security=True;";
+        string connectionString = @"Server=DESKTOP-3RKAS3I; Database=Pharma Proj; User Id=PharmaLogin; Password=PharmaApp159;";
 
         public Clients()
         {
@@ -138,11 +138,55 @@ namespace Medina_Medix_Pharma_Proj
             }
         }
 
+        //private void btnSupprimerClient_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvClients.CurrentRow != null)
+        //    {
+        //        string nomClient = dgvClients.CurrentRow.Cells["Nom"].Value.ToString(); // Assurez-vous que "Nom" correspond au nom de la colonne dans le DataGridView
+        //        SupprimerClientParNom(nomClient);
+        //        ChargerClientsDansDataGridView();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Veuillez sélectionner un client à supprimer.");
+        //    }
+        //}
+
+        //private void SupprimerClientParNom(string nom)
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            con.Open();
+        //            string query = "DELETE FROM Clients WHERE Nom = @Nom";
+        //            using (SqlCommand cmd = new SqlCommand(query, con))
+        //            {
+        //                cmd.Parameters.AddWithValue("@Nom", nom);
+        //                int rowsAffected = cmd.ExecuteNonQuery();
+        //                if (rowsAffected > 0)
+        //                {
+        //                    MessageBox.Show("Client supprimé avec succès !");
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("Aucun client trouvé avec ce nom.");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Erreur lors de la suppression du client : " + ex.Message);
+        //    }
+        //}
+
+
         private void btnSupprimerClient_Click(object sender, EventArgs e)
         {
             if (dgvClients.CurrentRow != null)
             {
-                int clientId = Convert.ToInt32(dgvClients.CurrentRow.Cells["ClientIDColumn"].Value);
+                int clientId = Convert.ToInt32(dgvClients.CurrentRow.Cells[0].Value);
                 SupprimerClient(clientId);
                 ChargerClientsDansDataGridView();
             }
