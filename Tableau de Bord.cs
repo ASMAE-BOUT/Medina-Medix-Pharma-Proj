@@ -30,7 +30,11 @@ namespace Medina_Medix_Pharma_Proj
 
         private void btnClient_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             ClientsForm clientsForm = new ClientsForm();
+=======
+            Clients clientsForm = new Clients();
+>>>>>>> Ajoutez des fichiers projet.
             clientsForm.Show();
         }
 

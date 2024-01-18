@@ -1,7 +1,10 @@
 ﻿using System;
+<<<<<<< HEAD
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+=======
+>>>>>>> Ajoutez des fichiers projet.
 using System.Windows.Forms;
 
 namespace Medina_Medix_Pharma_Proj

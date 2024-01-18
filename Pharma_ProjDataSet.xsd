@@ -526,6 +526,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
+<<<<<<< HEAD
   <xs:element name="Pharma_ProjDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Pharma_ProjDataSet" msprop:Generator_DataSetName="Pharma_ProjDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -534,26 +535,45 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
             <xs:sequence>
               <xs:element name="ClientID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_UserColumnName="ClientID" type="xs:int" />
               <xs:element name="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+=======
+  <xs:element name="Pharma_ProjDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Pharma_ProjDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Pharma_ProjDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Clients" msprop:Generator_RowEvHandlerName="ClientsRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientsRowDeleted" msprop:Generator_RowDeletingName="ClientsRowDeleting" msprop:Generator_RowEvArgName="ClientsRowChangeEvent" msprop:Generator_TablePropName="Clients" msprop:Generator_RowChangedName="ClientsRowChanged" msprop:Generator_UserTableName="Clients" msprop:Generator_RowChangingName="ClientsRowChanging" msprop:Generator_RowClassName="ClientsRow" msprop:Generator_TableClassName="ClientsDataTable" msprop:Generator_TableVarName="tableClients">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ClientID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_UserColumnName="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Adresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_UserColumnName="Adresse" minOccurs="0">
+=======
+              <xs:element name="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_UserColumnName="Adresse" msprop:Generator_ColumnVarNameInTable="columnAdresse" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Téléphone" msprop:Generator_ColumnPropNameInRow="Téléphone" msprop:Generator_ColumnPropNameInTable="TéléphoneColumn" msprop:Generator_ColumnVarNameInTable="columnTéléphone" msprop:Generator_UserColumnName="Téléphone" minOccurs="0">
+=======
+              <xs:element name="Téléphone" msprop:Generator_ColumnPropNameInTable="TéléphoneColumn" msprop:Generator_ColumnPropNameInRow="Téléphone" msprop:Generator_UserColumnName="Téléphone" msprop:Generator_ColumnVarNameInTable="columnTéléphone" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Réduction" msprop:Generator_ColumnPropNameInRow="Réduction" msprop:Generator_ColumnPropNameInTable="RéductionColumn" msprop:Generator_ColumnVarNameInTable="columnRéduction" msprop:Generator_UserColumnName="Réduction" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -563,20 +583,39 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
             <xs:sequence>
               <xs:element name="FournisseurID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="FournisseurID" msprop:Generator_ColumnPropNameInTable="FournisseurIDColumn" msprop:Generator_ColumnVarNameInTable="columnFournisseurID" msprop:Generator_UserColumnName="FournisseurID" type="xs:int" />
               <xs:element name="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+=======
+              <xs:element name="Réduction" msprop:Generator_ColumnPropNameInTable="RéductionColumn" msprop:Generator_ColumnPropNameInRow="Réduction" msprop:Generator_UserColumnName="Réduction" msprop:Generator_ColumnVarNameInTable="columnRéduction" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Fournisseurs" msprop:Generator_RowEvHandlerName="FournisseursRowChangeEventHandler" msprop:Generator_RowDeletedName="FournisseursRowDeleted" msprop:Generator_RowDeletingName="FournisseursRowDeleting" msprop:Generator_RowEvArgName="FournisseursRowChangeEvent" msprop:Generator_TablePropName="Fournisseurs" msprop:Generator_RowChangedName="FournisseursRowChanged" msprop:Generator_UserTableName="Fournisseurs" msprop:Generator_RowChangingName="FournisseursRowChanging" msprop:Generator_RowClassName="FournisseursRow" msprop:Generator_TableClassName="FournisseursDataTable" msprop:Generator_TableVarName="tableFournisseurs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FournisseurID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="FournisseurIDColumn" msprop:Generator_ColumnPropNameInRow="FournisseurID" msprop:Generator_UserColumnName="FournisseurID" msprop:Generator_ColumnVarNameInTable="columnFournisseurID" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Contact" msprop:Generator_ColumnPropNameInRow="Contact" msprop:Generator_ColumnPropNameInTable="ContactColumn" msprop:Generator_ColumnVarNameInTable="columnContact" msprop:Generator_UserColumnName="Contact" minOccurs="0">
+=======
+              <xs:element name="Contact" msprop:Generator_ColumnPropNameInTable="ContactColumn" msprop:Generator_ColumnPropNameInRow="Contact" msprop:Generator_UserColumnName="Contact" msprop:Generator_ColumnVarNameInTable="columnContact" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Adresse" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_ColumnVarNameInTable="columnAdresse" msprop:Generator_UserColumnName="Adresse" minOccurs="0">
+=======
+              <xs:element name="Adresse" msprop:Generator_ColumnPropNameInTable="AdresseColumn" msprop:Generator_ColumnPropNameInRow="Adresse" msprop:Generator_UserColumnName="Adresse" msprop:Generator_ColumnVarNameInTable="columnAdresse" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
@@ -586,51 +625,82 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+<<<<<<< HEAD
         <xs:element name="Médicaments" msprop:Generator_RowEvHandlerName="MédicamentsRowChangeEventHandler" msprop:Generator_RowDeletedName="MédicamentsRowDeleted" msprop:Generator_RowDeletingName="MédicamentsRowDeleting" msprop:Generator_RowEvArgName="MédicamentsRowChangeEvent" msprop:Generator_TablePropName="Médicaments" msprop:Generator_RowChangedName="MédicamentsRowChanged" msprop:Generator_RowChangingName="MédicamentsRowChanging" msprop:Generator_TableClassName="MédicamentsDataTable" msprop:Generator_RowClassName="MédicamentsRow" msprop:Generator_TableVarName="tableMédicaments" msprop:Generator_UserTableName="Médicaments">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MédicamentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="MédicamentID" msprop:Generator_ColumnPropNameInTable="MédicamentIDColumn" msprop:Generator_ColumnVarNameInTable="columnMédicamentID" msprop:Generator_UserColumnName="MédicamentID" type="xs:int" />
               <xs:element name="Photo" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnVarNameInTable="columnPhoto" msprop:Generator_UserColumnName="Photo" type="xs:base64Binary" minOccurs="0" />
               <xs:element name="Désignation" msprop:Generator_ColumnPropNameInRow="Désignation" msprop:Generator_ColumnPropNameInTable="DésignationColumn" msprop:Generator_ColumnVarNameInTable="columnDésignation" msprop:Generator_UserColumnName="Désignation" minOccurs="0">
+=======
+        <xs:element name="Médicaments" msprop:Generator_RowEvHandlerName="MédicamentsRowChangeEventHandler" msprop:Generator_RowDeletedName="MédicamentsRowDeleted" msprop:Generator_RowDeletingName="MédicamentsRowDeleting" msprop:Generator_RowEvArgName="MédicamentsRowChangeEvent" msprop:Generator_TablePropName="Médicaments" msprop:Generator_RowChangedName="MédicamentsRowChanged" msprop:Generator_UserTableName="Médicaments" msprop:Generator_RowChangingName="MédicamentsRowChanging" msprop:Generator_RowClassName="MédicamentsRow" msprop:Generator_TableClassName="MédicamentsDataTable" msprop:Generator_TableVarName="tableMédicaments">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MédicamentID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MédicamentIDColumn" msprop:Generator_ColumnPropNameInRow="MédicamentID" msprop:Generator_UserColumnName="MédicamentID" msprop:Generator_ColumnVarNameInTable="columnMédicamentID" type="xs:int" />
+              <xs:element name="Photo" msprop:Generator_ColumnPropNameInTable="PhotoColumn" msprop:Generator_ColumnPropNameInRow="Photo" msprop:Generator_UserColumnName="Photo" msprop:Generator_ColumnVarNameInTable="columnPhoto" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Désignation" msprop:Generator_ColumnPropNameInTable="DésignationColumn" msprop:Generator_ColumnPropNameInRow="Désignation" msprop:Generator_UserColumnName="Désignation" msprop:Generator_ColumnVarNameInTable="columnDésignation" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="PrixAchat" msprop:Generator_ColumnPropNameInRow="PrixAchat" msprop:Generator_ColumnPropNameInTable="PrixAchatColumn" msprop:Generator_ColumnVarNameInTable="columnPrixAchat" msprop:Generator_UserColumnName="PrixAchat" type="xs:decimal" minOccurs="0" />
               <xs:element name="PrixVente" msprop:Generator_ColumnPropNameInRow="PrixVente" msprop:Generator_ColumnPropNameInTable="PrixVenteColumn" msprop:Generator_ColumnVarNameInTable="columnPrixVente" msprop:Generator_UserColumnName="PrixVente" type="xs:decimal" minOccurs="0" />
               <xs:element name="QuantitéMinimale" msprop:Generator_ColumnPropNameInRow="QuantitéMinimale" msprop:Generator_ColumnPropNameInTable="QuantitéMinimaleColumn" msprop:Generator_ColumnVarNameInTable="columnQuantitéMinimale" msprop:Generator_UserColumnName="QuantitéMinimale" type="xs:int" minOccurs="0" />
               <xs:element name="QuantitéDisponible" msprop:Generator_ColumnPropNameInRow="QuantitéDisponible" msprop:Generator_ColumnPropNameInTable="QuantitéDisponibleColumn" msprop:Generator_ColumnVarNameInTable="columnQuantitéDisponible" msprop:Generator_UserColumnName="QuantitéDisponible" type="xs:int" minOccurs="0" />
               <xs:element name="Utilisations" msprop:Generator_ColumnPropNameInRow="Utilisations" msprop:Generator_ColumnPropNameInTable="UtilisationsColumn" msprop:Generator_ColumnVarNameInTable="columnUtilisations" msprop:Generator_UserColumnName="Utilisations" minOccurs="0">
+=======
+              <xs:element name="PrixAchat" msprop:Generator_ColumnPropNameInTable="PrixAchatColumn" msprop:Generator_ColumnPropNameInRow="PrixAchat" msprop:Generator_UserColumnName="PrixAchat" msprop:Generator_ColumnVarNameInTable="columnPrixAchat" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PrixVente" msprop:Generator_ColumnPropNameInTable="PrixVenteColumn" msprop:Generator_ColumnPropNameInRow="PrixVente" msprop:Generator_UserColumnName="PrixVente" msprop:Generator_ColumnVarNameInTable="columnPrixVente" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QuantitéMinimale" msprop:Generator_ColumnPropNameInTable="QuantitéMinimaleColumn" msprop:Generator_ColumnPropNameInRow="QuantitéMinimale" msprop:Generator_UserColumnName="QuantitéMinimale" msprop:Generator_ColumnVarNameInTable="columnQuantitéMinimale" type="xs:int" minOccurs="0" />
+              <xs:element name="QuantitéDisponible" msprop:Generator_ColumnPropNameInTable="QuantitéDisponibleColumn" msprop:Generator_ColumnPropNameInRow="QuantitéDisponible" msprop:Generator_UserColumnName="QuantitéDisponible" msprop:Generator_ColumnVarNameInTable="columnQuantitéDisponible" type="xs:int" minOccurs="0" />
+              <xs:element name="Utilisations" msprop:Generator_ColumnPropNameInTable="UtilisationsColumn" msprop:Generator_ColumnPropNameInRow="Utilisations" msprop:Generator_UserColumnName="Utilisations" msprop:Generator_ColumnVarNameInTable="columnUtilisations" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="ContreIndications" msprop:Generator_ColumnPropNameInRow="ContreIndications" msprop:Generator_ColumnPropNameInTable="ContreIndicationsColumn" msprop:Generator_ColumnVarNameInTable="columnContreIndications" msprop:Generator_UserColumnName="ContreIndications" minOccurs="0">
+=======
+              <xs:element name="ContreIndications" msprop:Generator_ColumnPropNameInTable="ContreIndicationsColumn" msprop:Generator_ColumnPropNameInRow="ContreIndications" msprop:Generator_UserColumnName="ContreIndications" msprop:Generator_ColumnVarNameInTable="columnContreIndications" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="EffetsSecondaires" msprop:Generator_ColumnPropNameInRow="EffetsSecondaires" msprop:Generator_ColumnPropNameInTable="EffetsSecondairesColumn" msprop:Generator_ColumnVarNameInTable="columnEffetsSecondaires" msprop:Generator_UserColumnName="EffetsSecondaires" minOccurs="0">
+=======
+              <xs:element name="EffetsSecondaires" msprop:Generator_ColumnPropNameInTable="EffetsSecondairesColumn" msprop:Generator_ColumnPropNameInRow="EffetsSecondaires" msprop:Generator_UserColumnName="EffetsSecondaires" msprop:Generator_ColumnVarNameInTable="columnEffetsSecondaires" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="TauxDePriseEnCharge" msprop:Generator_ColumnPropNameInRow="TauxDePriseEnCharge" msprop:Generator_ColumnPropNameInTable="TauxDePriseEnChargeColumn" msprop:Generator_ColumnVarNameInTable="columnTauxDePriseEnCharge" msprop:Generator_UserColumnName="TauxDePriseEnCharge" type="xs:decimal" minOccurs="0" />
               <xs:element name="CodeÀBarres" msprop:Generator_ColumnPropNameInRow="CodeÀBarres" msprop:Generator_ColumnPropNameInTable="CodeÀBarresColumn" msprop:Generator_ColumnVarNameInTable="columnCodeÀBarres" msprop:Generator_UserColumnName="CodeÀBarres" minOccurs="0">
+=======
+              <xs:element name="TauxDePriseEnCharge" msprop:Generator_ColumnPropNameInTable="TauxDePriseEnChargeColumn" msprop:Generator_ColumnPropNameInRow="TauxDePriseEnCharge" msprop:Generator_UserColumnName="TauxDePriseEnCharge" msprop:Generator_ColumnVarNameInTable="columnTauxDePriseEnCharge" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CodeÀBarres" msprop:Generator_ColumnPropNameInTable="CodeÀBarresColumn" msprop:Generator_ColumnPropNameInRow="CodeÀBarres" msprop:Generator_UserColumnName="CodeÀBarres" msprop:Generator_ColumnVarNameInTable="columnCodeÀBarres" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="DateDExpiration" msprop:Generator_ColumnPropNameInRow="DateDExpiration" msprop:Generator_ColumnPropNameInTable="DateDExpirationColumn" msprop:Generator_ColumnVarNameInTable="columnDateDExpiration" msprop:Generator_UserColumnName="DateDExpiration" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -660,20 +730,59 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
             <xs:sequence>
               <xs:element name="UtilisateurID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="UtilisateurID" msprop:Generator_ColumnPropNameInTable="UtilisateurIDColumn" msprop:Generator_ColumnVarNameInTable="columnUtilisateurID" msprop:Generator_UserColumnName="UtilisateurID" type="xs:int" />
               <xs:element name="Nom" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnVarNameInTable="columnNom" msprop:Generator_UserColumnName="Nom" minOccurs="0">
+=======
+              <xs:element name="DateDExpiration" msprop:Generator_ColumnPropNameInTable="DateDExpirationColumn" msprop:Generator_ColumnPropNameInRow="DateDExpiration" msprop:Generator_UserColumnName="DateDExpiration" msprop:Generator_ColumnVarNameInTable="columnDateDExpiration" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Ordonnances" msprop:Generator_RowEvHandlerName="OrdonnancesRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdonnancesRowDeleted" msprop:Generator_RowDeletingName="OrdonnancesRowDeleting" msprop:Generator_RowEvArgName="OrdonnancesRowChangeEvent" msprop:Generator_TablePropName="Ordonnances" msprop:Generator_RowChangedName="OrdonnancesRowChanged" msprop:Generator_UserTableName="Ordonnances" msprop:Generator_RowChangingName="OrdonnancesRowChanging" msprop:Generator_RowClassName="OrdonnancesRow" msprop:Generator_TableClassName="OrdonnancesDataTable" msprop:Generator_TableVarName="tableOrdonnances">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OrdonnanceID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="OrdonnanceIDColumn" msprop:Generator_ColumnPropNameInRow="OrdonnanceID" msprop:Generator_UserColumnName="OrdonnanceID" msprop:Generator_ColumnVarNameInTable="columnOrdonnanceID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_UserColumnName="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stocks" msprop:Generator_RowEvHandlerName="StocksRowChangeEventHandler" msprop:Generator_RowDeletedName="StocksRowDeleted" msprop:Generator_RowDeletingName="StocksRowDeleting" msprop:Generator_RowEvArgName="StocksRowChangeEvent" msprop:Generator_TablePropName="Stocks" msprop:Generator_RowChangedName="StocksRowChanged" msprop:Generator_UserTableName="Stocks" msprop:Generator_RowChangingName="StocksRowChanging" msprop:Generator_RowClassName="StocksRow" msprop:Generator_TableClassName="StocksDataTable" msprop:Generator_TableVarName="tableStocks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StockID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="StockIDColumn" msprop:Generator_ColumnPropNameInRow="StockID" msprop:Generator_UserColumnName="StockID" msprop:Generator_ColumnVarNameInTable="columnStockID" type="xs:int" />
+              <xs:element name="MédicamentID" msprop:Generator_ColumnPropNameInTable="MédicamentIDColumn" msprop:Generator_ColumnPropNameInRow="MédicamentID" msprop:Generator_UserColumnName="MédicamentID" msprop:Generator_ColumnVarNameInTable="columnMédicamentID" type="xs:int" minOccurs="0" />
+              <xs:element name="Quantité" msprop:Generator_ColumnPropNameInTable="QuantitéColumn" msprop:Generator_ColumnPropNameInRow="Quantité" msprop:Generator_UserColumnName="Quantité" msprop:Generator_ColumnVarNameInTable="columnQuantité" type="xs:int" minOccurs="0" />
+              <xs:element name="DateEntrée" msprop:Generator_ColumnPropNameInTable="DateEntréeColumn" msprop:Generator_ColumnPropNameInRow="DateEntrée" msprop:Generator_UserColumnName="DateEntrée" msprop:Generator_ColumnVarNameInTable="columnDateEntrée" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Utilisateurs" msprop:Generator_RowEvHandlerName="UtilisateursRowChangeEventHandler" msprop:Generator_RowDeletedName="UtilisateursRowDeleted" msprop:Generator_RowDeletingName="UtilisateursRowDeleting" msprop:Generator_RowEvArgName="UtilisateursRowChangeEvent" msprop:Generator_TablePropName="Utilisateurs" msprop:Generator_RowChangedName="UtilisateursRowChanged" msprop:Generator_UserTableName="Utilisateurs" msprop:Generator_RowChangingName="UtilisateursRowChanging" msprop:Generator_RowClassName="UtilisateursRow" msprop:Generator_TableClassName="UtilisateursDataTable" msprop:Generator_TableVarName="tableUtilisateurs">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UtilisateurID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="UtilisateurIDColumn" msprop:Generator_ColumnPropNameInRow="UtilisateurID" msprop:Generator_UserColumnName="UtilisateurID" msprop:Generator_ColumnVarNameInTable="columnUtilisateurID" type="xs:int" />
+              <xs:element name="Nom" msprop:Generator_ColumnPropNameInTable="NomColumn" msprop:Generator_ColumnPropNameInRow="Nom" msprop:Generator_UserColumnName="Nom" msprop:Generator_ColumnVarNameInTable="columnNom" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="Role" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnVarNameInTable="columnRole" msprop:Generator_UserColumnName="Role" minOccurs="0">
+=======
+              <xs:element name="Role" msprop:Generator_ColumnPropNameInTable="RoleColumn" msprop:Generator_ColumnPropNameInRow="Role" msprop:Generator_UserColumnName="Role" msprop:Generator_ColumnVarNameInTable="columnRole" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+<<<<<<< HEAD
               <xs:element name="MotDePasse" msprop:Generator_ColumnPropNameInRow="MotDePasse" msprop:Generator_ColumnPropNameInTable="MotDePasseColumn" msprop:Generator_ColumnVarNameInTable="columnMotDePasse" msprop:Generator_UserColumnName="MotDePasse" minOccurs="0">
+=======
+              <xs:element name="MotDePasse" msprop:Generator_ColumnPropNameInTable="MotDePasseColumn" msprop:Generator_ColumnPropNameInRow="MotDePasse" msprop:Generator_UserColumnName="MotDePasse" msprop:Generator_ColumnVarNameInTable="columnMotDePasse" minOccurs="0">
+>>>>>>> Ajoutez des fichiers projet.
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -683,6 +792,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+<<<<<<< HEAD
         <xs:element name="Ventes" msprop:Generator_RowEvHandlerName="VentesRowChangeEventHandler" msprop:Generator_RowDeletedName="VentesRowDeleted" msprop:Generator_RowDeletingName="VentesRowDeleting" msprop:Generator_RowEvArgName="VentesRowChangeEvent" msprop:Generator_TablePropName="Ventes" msprop:Generator_RowChangedName="VentesRowChanged" msprop:Generator_RowChangingName="VentesRowChanging" msprop:Generator_TableClassName="VentesDataTable" msprop:Generator_RowClassName="VentesRow" msprop:Generator_TableVarName="tableVentes" msprop:Generator_UserTableName="Ventes">
           <xs:complexType>
             <xs:sequence>
@@ -691,6 +801,16 @@ SELECT VenteID, Date, ClientID, Total, Réduction FROM Ventes WHERE (VenteID = @
               <xs:element name="ClientID" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnVarNameInTable="columnClientID" msprop:Generator_UserColumnName="ClientID" type="xs:int" minOccurs="0" />
               <xs:element name="Total" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_UserColumnName="Total" type="xs:decimal" minOccurs="0" />
               <xs:element name="Réduction" msprop:Generator_ColumnPropNameInRow="Réduction" msprop:Generator_ColumnPropNameInTable="RéductionColumn" msprop:Generator_ColumnVarNameInTable="columnRéduction" msprop:Generator_UserColumnName="Réduction" type="xs:decimal" minOccurs="0" />
+=======
+        <xs:element name="Ventes" msprop:Generator_RowEvHandlerName="VentesRowChangeEventHandler" msprop:Generator_RowDeletedName="VentesRowDeleted" msprop:Generator_RowDeletingName="VentesRowDeleting" msprop:Generator_RowEvArgName="VentesRowChangeEvent" msprop:Generator_TablePropName="Ventes" msprop:Generator_RowChangedName="VentesRowChanged" msprop:Generator_UserTableName="Ventes" msprop:Generator_RowChangingName="VentesRowChanging" msprop:Generator_RowClassName="VentesRow" msprop:Generator_TableClassName="VentesDataTable" msprop:Generator_TableVarName="tableVentes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VenteID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="VenteIDColumn" msprop:Generator_ColumnPropNameInRow="VenteID" msprop:Generator_UserColumnName="VenteID" msprop:Generator_ColumnVarNameInTable="columnVenteID" type="xs:int" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ClientID" msprop:Generator_ColumnPropNameInTable="ClientIDColumn" msprop:Generator_ColumnPropNameInRow="ClientID" msprop:Generator_UserColumnName="ClientID" msprop:Generator_ColumnVarNameInTable="columnClientID" type="xs:int" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_UserColumnName="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Réduction" msprop:Generator_ColumnPropNameInTable="RéductionColumn" msprop:Generator_ColumnPropNameInRow="Réduction" msprop:Generator_UserColumnName="Réduction" msprop:Generator_ColumnVarNameInTable="columnRéduction" type="xs:decimal" minOccurs="0" />
+>>>>>>> Ajoutez des fichiers projet.
             </xs:sequence>
           </xs:complexType>
         </xs:element>

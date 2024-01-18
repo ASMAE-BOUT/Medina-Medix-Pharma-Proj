@@ -58,6 +58,11 @@ namespace Medina_Medix_Pharma_Proj
             this.bttnQuitter = new System.Windows.Forms.Button();
             this.clientsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAfficherClients = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+>>>>>>> Ajoutez des fichiers projet.
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
@@ -65,6 +70,10 @@ namespace Medina_Medix_Pharma_Proj
             ((System.ComponentModel.ISupportInitialize)(this.pharmaProjDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharma_ProjDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).BeginInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+>>>>>>> Ajoutez des fichiers projet.
             this.SuspendLayout();
             // 
             // groupBox1
@@ -289,11 +298,19 @@ namespace Medina_Medix_Pharma_Proj
             this.bttnQuitter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
             this.bttnQuitter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
             this.bttnQuitter.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
             this.bttnQuitter.Location = new System.Drawing.Point(634, 135);
             this.bttnQuitter.Name = "bttnQuitter";
             this.bttnQuitter.Size = new System.Drawing.Size(156, 28);
             this.bttnQuitter.TabIndex = 5;
             this.bttnQuitter.Text = "Quitter";
+=======
+            this.bttnQuitter.Location = new System.Drawing.Point(634, 169);
+            this.bttnQuitter.Name = "bttnQuitter";
+            this.bttnQuitter.Size = new System.Drawing.Size(156, 28);
+            this.bttnQuitter.TabIndex = 5;
+            this.bttnQuitter.Text = "Retour";
+>>>>>>> Ajoutez des fichiers projet.
             this.bttnQuitter.UseVisualStyleBackColor = false;
             this.bttnQuitter.Click += new System.EventHandler(this.bttnQuitter_Click);
             // 
@@ -311,7 +328,11 @@ namespace Medina_Medix_Pharma_Proj
             this.btnAfficherClients.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PaleVioletRed;
             this.btnAfficherClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PaleVioletRed;
             this.btnAfficherClients.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
             this.btnAfficherClients.Location = new System.Drawing.Point(634, 169);
+=======
+            this.btnAfficherClients.Location = new System.Drawing.Point(634, 135);
+>>>>>>> Ajoutez des fichiers projet.
             this.btnAfficherClients.Name = "btnAfficherClients";
             this.btnAfficherClients.Size = new System.Drawing.Size(156, 28);
             this.btnAfficherClients.TabIndex = 6;
@@ -319,12 +340,43 @@ namespace Medina_Medix_Pharma_Proj
             this.btnAfficherClients.UseVisualStyleBackColor = false;
             this.btnAfficherClients.Click += new System.EventHandler(this.btnAfficherClients_Click);
             // 
+<<<<<<< HEAD
+=======
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DeepPink;
+            this.label6.Location = new System.Drawing.Point(694, 429);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 18);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Medina Medix";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.pink_pharmacy_logo_hi;
+            this.pictureBox1.Location = new System.Drawing.Point(707, 390);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(65, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
+>>>>>>> Ajoutez des fichiers projet.
             // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(802, 461);
+<<<<<<< HEAD
+=======
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBox1);
+>>>>>>> Ajoutez des fichiers projet.
             this.Controls.Add(this.btnAfficherClients);
             this.Controls.Add(this.bttnQuitter);
             this.Controls.Add(this.btnRechercher);
@@ -349,7 +401,13 @@ namespace Medina_Medix_Pharma_Proj
             ((System.ComponentModel.ISupportInitialize)(this.pharmaProjDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharma_ProjDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource1)).EndInit();
+<<<<<<< HEAD
             this.ResumeLayout(false);
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+>>>>>>> Ajoutez des fichiers projet.
 
         }
 
@@ -382,6 +440,11 @@ namespace Medina_Medix_Pharma_Proj
         private System.Windows.Forms.Button bttnQuitter;
         private System.Windows.Forms.BindingSource clientsBindingSource1;
         private System.Windows.Forms.Button btnAfficherClients;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+>>>>>>> Ajoutez des fichiers projet.
 
         public EventHandler SupprimerClient_Click { get; private set; }
     }
