@@ -23,9 +23,11 @@ Rapports et Analyses : Génération de rapports pour les ventes, les stocks et l
 
 ![Capture d'écran 2024-01-18 202512](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/6344fd88-67e0-4edb-a35c-fb2ce23d692f)
 
-![Capture d'écran 2024-01-18 202540](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/73e130e4-4801-4132-9100-b21d02336936)
-
 ![Capture d'écran 2024-01-18 202621](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/94c90a80-cf08-470e-a3d4-1cf8f07ff08b)
 
+![Capture d'écran 2024-01-18 202540](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/73e130e4-4801-4132-9100-b21d02336936)
+
 ![Capture d'écran 2024-01-18 202639](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/ac570015-1e13-4ee9-81e9-e6545453349d)
+
+![Capture d'écran 2024-01-19 141737](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/631937c9-a2b1-4211-9168-10fd6029dde7)
 
