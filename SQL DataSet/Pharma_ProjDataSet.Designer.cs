@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Medina_Medix_Pharma_Proj {
+namespace Medina_Medix_Pharma_Proj.SQL_DataSet {
     
     
     /// <summary>
@@ -4165,7 +4165,7 @@ namespace Medina_Medix_Pharma_Proj {
         }
     }
 }
-namespace Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters {
+namespace Medina_Medix_Pharma_Proj.SQL_DataSet.Pharma_ProjDataSetTableAdapters {
     
     
     /// <summary>
@@ -4311,8 +4311,8 @@ namespace Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Clients] ([Nom], [Adresse], [Téléphone], [Réduction]) VALUES (" +
-                "@Nom, @Adresse, @Téléphone, @Réduction);\r\nSELECT ClientID, Nom, Adresse, Télépho" +
-                "ne, Réduction FROM Clients WHERE (ClientID = SCOPE_IDENTITY())";
+                "@Nom, @Adresse, @Téléphone, @Réduction);\nSELECT ClientID, Nom, Adresse, Téléphon" +
+                "e, Réduction FROM Clients WHERE (ClientID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4736,8 +4736,8 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Fournisseurs] ([Nom], [Contact], [Adresse]) VALUES (@Nom, @Con" +
-                "tact, @Adresse);\r\nSELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs " +
-                "WHERE (FournisseurID = SCOPE_IDENTITY())";
+                "tact, @Adresse);\nSELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs W" +
+                "HERE (FournisseurID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5191,10 +5191,10 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
                 "Charge] IS NULL) OR ([TauxDePriseEnCharge] = @Original_TauxDePriseEnCharge)) AND" +
                 " ((@IsNull_CodeÀBarres = 1 AND [CodeÀBarres] IS NULL) OR ([CodeÀBarres] = @Origi" +
                 "nal_CodeÀBarres)) AND ((@IsNull_DateDExpiration = 1 AND [DateDExpiration] IS NUL" +
-                "L) OR ([DateDExpiration] = @Original_DateDExpiration)));\r\nSELECT MédicamentID, P" +
-                "hoto, Désignation, PrixAchat, PrixVente, QuantitéMinimale, QuantitéDisponible, U" +
-                "tilisations, ContreIndications, EffetsSecondaires, TauxDePriseEnCharge, CodeÀBar" +
-                "res, DateDExpiration FROM Médicaments WHERE (MédicamentID = @MédicamentID)";
+                "L) OR ([DateDExpiration] = @Original_DateDExpiration)));\nSELECT MédicamentID, Ph" +
+                "oto, Désignation, PrixAchat, PrixVente, QuantitéMinimale, QuantitéDisponible, Ut" +
+                "ilisations, ContreIndications, EffetsSecondaires, TauxDePriseEnCharge, CodeÀBarr" +
+                "es, DateDExpiration FROM Médicaments WHERE (MédicamentID = @MédicamentID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Photo", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Désignation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Désignation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5890,8 +5890,8 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ordonnances] ([Date], [ClientID], [Total]) VALUES (@Date, @Cli" +
-                "entID, @Total);\r\nSELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHE" +
-                "RE (OrdonnanceID = SCOPE_IDENTITY())";
+                "entID, @Total);\nSELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHER" +
+                "E (OrdonnanceID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6283,8 +6283,8 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Stocks] ([MédicamentID], [Quantité], [DateEntrée]) VALUES (@Mé" +
-                "dicamentID, @Quantité, @DateEntrée);\r\nSELECT StockID, MédicamentID, Quantité, Da" +
-                "teEntrée FROM Stocks WHERE (StockID = SCOPE_IDENTITY())";
+                "dicamentID, @Quantité, @DateEntrée);\nSELECT StockID, MédicamentID, Quantité, Dat" +
+                "eEntrée FROM Stocks WHERE (StockID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MédicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MédicamentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantité", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantité", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6676,8 +6676,8 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Utilisateurs] ([Nom], [Role], [MotDePasse]) VALUES (@Nom, @Rol" +
-                "e, @MotDePasse);\r\nSELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs " +
-                "WHERE (UtilisateurID = SCOPE_IDENTITY())";
+                "e, @MotDePasse);\nSELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs W" +
+                "HERE (UtilisateurID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7072,8 +7072,8 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Ventes] ([Date], [ClientID], [Total], [Réduction]) VALUES (@Da" +
-                "te, @ClientID, @Total, @Réduction);\r\nSELECT VenteID, Date, ClientID, Total, Rédu" +
-                "ction FROM Ventes WHERE (VenteID = SCOPE_IDENTITY())";
+                "te, @ClientID, @Total, @Réduction);\nSELECT VenteID, Date, ClientID, Total, Réduc" +
+                "tion FROM Ventes WHERE (VenteID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

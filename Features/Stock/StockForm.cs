@@ -78,48 +78,23 @@ namespace Medina_Medix_Pharma_Proj
         }
 
         private void btnAjouter_Click(object sender, EventArgs e)
-        //{
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        string query = "INSERT INTO Stocks (MédicamentID, Quantité, DateEntrée) VALUES (@MédicamentID, @Quantité, @DateEntrée)";
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.AddWithValue("@MédicamentID", cmbMedicamentID.SelectedValue);
-        //            cmd.Parameters.AddWithValue("@Quantité", int.Parse(txtQuantite.Text));
-        //            cmd.Parameters.AddWithValue("@DateEntrée", dtpDateEntree.Value);
-
-        //            con.Open();
-        //            cmd.ExecuteNonQuery();
-        //            MessageBox.Show("Stock ajouté avec succès !");
-        //        }
-        //    }
-        //    ChargerStocksDansDataGridView();
-        //}
-
         {
-            // Supposons que vous ayez un champ pour entrer la quantité à ajouter
-            int quantiteAjoutee = int.Parse(txtQuantite.Text);
-            int medicamentId = Convert.ToInt32(cmbMedicamentID.SelectedValue);
-            DateTime dateEntree = dtpDateEntree.Value;
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                con.Open();
-                using (SqlCommand cmd = new SqlCommand("AjouterAuStock", con))
+                string query = "INSERT INTO Stocks (MédicamentID, Quantité, DateEntrée) VALUES (@MédicamentID, @Quantité, @DateEntrée)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MédicamentID", medicamentId);
-                    cmd.Parameters.AddWithValue("@Quantité", quantiteAjoutee);
-                    cmd.Parameters.AddWithValue("@DateEntrée", dateEntree);
+                    cmd.Parameters.AddWithValue("@MédicamentID", cmbMedicamentID.SelectedValue);
+                    cmd.Parameters.AddWithValue("@Quantité", int.Parse(txtQuantite.Text));
+                    cmd.Parameters.AddWithValue("@DateEntrée", dtpDateEntree.Value);
+
+                    con.Open();
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("Stock ajouté avec succès !");
                 }
             }
-
-            MessageBox.Show("Stock mis à jour avec succès !");
             ChargerStocksDansDataGridView();
         }
-
-
 
         private void btnModifier_Click(object sender, EventArgs e)
         {

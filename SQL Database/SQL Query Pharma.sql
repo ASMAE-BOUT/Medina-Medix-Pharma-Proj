@@ -67,6 +67,7 @@ Select * from Ventes
 Select * from Ordonnances
 Select * from Utilisateurs
 
+
 CREATE TABLE DetailsVente (
     DetailsVenteID INT PRIMARY KEY IDENTITY,
     VenteID INT FOREIGN KEY REFERENCES Ventes(VenteID),
@@ -110,4 +111,11 @@ SELECT MédicamentID, SUM(Quantité) as QuantitéTotale
 FROM Stocks
 GROUP BY MédicamentID;
 
+DROP TABLE DetailsVente;
+
+ALTER TABLE Ventes ADD MédicamentID INT;
+ALTER TABLE Ventes ADD QuantitéVendue INT;
+ALTER TABLE Ventes ADD CONSTRAINT FK_Ventes_Medicaments FOREIGN KEY (MédicamentID) REFERENCES Médicaments(MédicamentID);
+
+DROP VIEW EtatDesStocks;
 

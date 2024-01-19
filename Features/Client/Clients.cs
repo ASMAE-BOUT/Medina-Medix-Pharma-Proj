@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -78,45 +77,21 @@ namespace Medina_Medix_Pharma_Proj
         }
 
         private void btnAjouterClient_Click(object sender, EventArgs e)
-
-        //{
-        //    using (SqlConnection con = new SqlConnection(connectionString))
-        //    {
-        //        string query = "INSERT INTO Clients (Nom, Adresse, Téléphone, Réduction) VALUES (@Nom, @Adresse, @Téléphone, @Réduction)";
-        //        using (SqlCommand cmd = new SqlCommand(query, con))
-        //        {
-        //            cmd.Parameters.AddWithValue("@Nom", txtNomClient.Text);
-        //            cmd.Parameters.AddWithValue("@Adresse", txtAdresse.Text);
-        //            cmd.Parameters.AddWithValue("@Téléphone", txtTéléphone.Text);
-        //            cmd.Parameters.AddWithValue("@Réduction", txtRéduction.Text);
-
-        //            con.Open();
-        //            cmd.ExecuteNonQuery();
-        //            MessageBox.Show("Client ajouté avec succès !");
-        //        }
-        //    }
-        //    ChargerClientsDansDataGridView();
-        //}
-
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            string nom = txtNomClient.Text;
+            string adresse = txtAdresse.Text;
+            string telephone = txtTéléphone.Text;
+            //decimal reduction = decimal.Parse(txtRéduction.Text);
+            if (!decimal.TryParse(txtRéduction.Text, out decimal reduction))
             {
-                string query = "INSERT INTO Clients (Nom, Adresse, Téléphone, Réduction) VALUES (@Nom, @Adresse, @Téléphone, @Réduction)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Nom", txtNomClient.Text);
-                    cmd.Parameters.AddWithValue("@Adresse", txtAdresse.Text);
-                    cmd.Parameters.AddWithValue("@Téléphone", txtTéléphone.Text);
-                    cmd.Parameters.AddWithValue("@Réduction", decimal.TryParse(txtRéduction.Text, out decimal reduction) ? reduction : 0);
-
-                    con.Open();
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Client ajouté avec succès !");
-                }
+                MessageBox.Show("La réduction n'est pas dans un format valide.");
+                return;
             }
+
+
+            AjouterClient(nom, adresse, telephone, reduction);
             ChargerClientsDansDataGridView();
         }
-
 
         private void AjouterClient(string nom, string adresse, string telephone, decimal reduction)
         {
@@ -162,6 +137,49 @@ namespace Medina_Medix_Pharma_Proj
                 MessageBox.Show(ex.Message);
             }
         }
+
+        //private void btnSupprimerClient_Click(object sender, EventArgs e)
+        //{
+        //    if (dgvClients.CurrentRow != null)
+        //    {
+        //        string nomClient = dgvClients.CurrentRow.Cells["Nom"].Value.ToString(); // Assurez-vous que "Nom" correspond au nom de la colonne dans le DataGridView
+        //        SupprimerClientParNom(nomClient);
+        //        ChargerClientsDansDataGridView();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Veuillez sélectionner un client à supprimer.");
+        //    }
+        //}
+
+        //private void SupprimerClientParNom(string nom)
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection con = new SqlConnection(connectionString))
+        //        {
+        //            con.Open();
+        //            string query = "DELETE FROM Clients WHERE Nom = @Nom";
+        //            using (SqlCommand cmd = new SqlCommand(query, con))
+        //            {
+        //                cmd.Parameters.AddWithValue("@Nom", nom);
+        //                int rowsAffected = cmd.ExecuteNonQuery();
+        //                if (rowsAffected > 0)
+        //                {
+        //                    MessageBox.Show("Client supprimé avec succès !");
+        //                }
+        //                else
+        //                {
+        //                    MessageBox.Show("Aucun client trouvé avec ce nom.");
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Erreur lors de la suppression du client : " + ex.Message);
+        //    }
+        //}
 
 
         private void btnSupprimerClient_Click(object sender, EventArgs e)
