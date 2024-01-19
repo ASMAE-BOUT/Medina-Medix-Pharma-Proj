@@ -19,6 +19,8 @@ Rapports et Analyses : Génération de rapports pour les ventes, les stocks et l
 * Base de Données : SQL Server
 * Autres Outils : Visual Studio
 
+![Capture d'écran 2024-01-19 140246](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/83aa22db-b791-48d1-8ed2-7040fc227189)
+
 ![Capture d'écran 2024-01-18 202512](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/6344fd88-67e0-4edb-a35c-fb2ce23d692f)
 
 ![Capture d'écran 2024-01-18 202540](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/73e130e4-4801-4132-9100-b21d02336936)
