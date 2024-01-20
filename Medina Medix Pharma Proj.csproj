@@ -83,83 +83,83 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\Utilisateur\AddUserForm.cs">
+    <Compile Include="AddUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Utilisateur\AddUserForm.Designer.cs">
+    <Compile Include="AddUserForm.Designer.cs">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Client\Clients.cs">
+    <Compile Include="Clients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Client\Clients.Designer.cs">
+    <Compile Include="Clients.Designer.cs">
       <DependentUpon>Clients.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Fournisseur\FournisseursForm.cs">
+    <Compile Include="FournisseursForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Fournisseur\FournisseursForm.Designer.cs">
+    <Compile Include="FournisseursForm.Designer.cs">
       <DependentUpon>FournisseursForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Utilisateur\LoginForm.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Utilisateur\LoginForm.Designer.cs">
+    <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Medicament\MedicamentForm.cs">
+    <Compile Include="MedicamentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Medicament\MedicamentForm.Designer.cs">
+    <Compile Include="MedicamentForm.Designer.cs">
       <DependentUpon>MedicamentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Ordonnance\OrdonnanceForm.cs">
+    <Compile Include="OrdonnanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Ordonnance\OrdonnanceForm.Designer.cs">
+    <Compile Include="OrdonnanceForm.Designer.cs">
       <DependentUpon>OrdonnanceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SQL DataSet\Pharma_ProjDataSet.cs">
+    <Compile Include="Pharma_ProjDataSet.cs">
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SQL DataSet\Pharma_ProjDataSet.Designer.cs">
+    <Compile Include="Pharma_ProjDataSet.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Features\POS\POSForm.cs">
+    <Compile Include="POSForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\POS\POSForm.Designer.cs">
+    <Compile Include="POSForm.Designer.cs">
       <DependentUpon>POSForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Features\Stock\StockForm.cs">
+    <Compile Include="StockForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Stock\StockForm.Designer.cs">
+    <Compile Include="StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Features\Dashboard\Tableau de Bord.cs">
+    <Compile Include="Tableau de Bord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Features\Dashboard\Tableau de Bord.Designer.cs">
+    <Compile Include="Tableau de Bord.Designer.cs">
       <DependentUpon>Tableau de Bord.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Features\Utilisateur\AddUserForm.resx">
+    <EmbeddedResource Include="AddUserForm.resx">
       <DependentUpon>AddUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\Client\Clients.resx">
+    <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\Utilisateur\LoginForm.resx">
+    <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\Medicament\MedicamentForm.resx">
+    <EmbeddedResource Include="MedicamentForm.resx">
       <DependentUpon>MedicamentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\POS\POSForm.resx">
+    <EmbeddedResource Include="POSForm.resx">
       <DependentUpon>POSForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -172,21 +172,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Features\Stock\StockForm.resx">
+    <EmbeddedResource Include="StockForm.resx">
       <DependentUpon>StockForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Features\Dashboard\Tableau de Bord.resx">
+    <EmbeddedResource Include="Tableau de Bord.resx">
       <DependentUpon>Tableau de Bord.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="SQL DataSet\Pharma_ProjDataSet.xsc">
+    <None Include="Pharma_ProjDataSet.xsc">
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SQL DataSet\Pharma_ProjDataSet.xsd">
+    <None Include="Pharma_ProjDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>Pharma_ProjDataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="SQL DataSet\Pharma_ProjDataSet.xss">
+    <None Include="Pharma_ProjDataSet.xss">
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\app.manifest" />
