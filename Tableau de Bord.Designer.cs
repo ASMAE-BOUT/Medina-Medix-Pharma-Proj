@@ -37,6 +37,7 @@
             this.btnStock = new System.Windows.Forms.Button();
             this.btnMedicament = new System.Windows.Forms.Button();
             this.btnnQuitter = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,13 +164,25 @@
             // 
             this.btnnQuitter.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnnQuitter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnQuitter.Location = new System.Drawing.Point(514, 233);
+            this.btnnQuitter.Location = new System.Drawing.Point(471, 281);
             this.btnnQuitter.Name = "btnnQuitter";
-            this.btnnQuitter.Size = new System.Drawing.Size(108, 32);
+            this.btnnQuitter.Size = new System.Drawing.Size(151, 32);
             this.btnnQuitter.TabIndex = 16;
             this.btnnQuitter.Text = "Retour";
             this.btnnQuitter.UseVisualStyleBackColor = false;
             this.btnnQuitter.Click += new System.EventHandler(this.btnnQuitter_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LavenderBlush;
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(471, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 32);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Afficher Manuel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DashboardForm
             // 
@@ -177,6 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(666, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnnQuitter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
@@ -210,5 +224,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnnQuitter;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -107,6 +107,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manuel.Designer.cs">
+      <DependentUpon>Manuel.cs</DependentUpon>
+    </Compile>
     <Compile Include="MedicamentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,8 +159,14 @@
     <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FournisseursForm.resx">
+      <DependentUpon>FournisseursForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manuel.resx">
+      <DependentUpon>Manuel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MedicamentForm.resx">
       <DependentUpon>MedicamentForm.cs</DependentUpon>

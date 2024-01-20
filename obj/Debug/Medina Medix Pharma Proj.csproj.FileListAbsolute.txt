@@ -40,3 +40,5 @@ D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina Med
 D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina Medix Pharma Proj.csproj.CopyComplete
 D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina Medix Pharma Proj.exe
 D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina Medix Pharma Proj.pdb
+D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina_Medix_Pharma_Proj.FournisseursForm.resources
+D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\obj\Debug\Medina_Medix_Pharma_Proj.ManuelForm.resources

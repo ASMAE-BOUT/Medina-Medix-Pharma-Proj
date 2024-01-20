@@ -64,5 +64,12 @@ namespace Medina_Medix_Pharma_Proj
             FournisseursForm fournisseursForm = new FournisseursForm();
             fournisseursForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            ManuelForm manuelForm = new ManuelForm();
+            manuelForm.Show();
+        }
     }
 }
