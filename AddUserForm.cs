@@ -35,8 +35,10 @@ namespace Medina_Medix_Pharma_Proj
                     string query = "INSERT INTO Utilisateurs (Nom, Role, MotDePasse) VALUES (@Nom, @Role, @MotDePasse)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@Nom", nomUtilisateur);
-                        cmd.Parameters.AddWithValue("@Role", role);
+                        cmd.Parameters.AddWithValue("@Nom", nomUtilisateur.ToUpper());
+
+                        string roleFormatted = role.Length > 0 ? char.ToUpper(role[0]) + role.Substring(1).ToLower() : "";
+                        cmd.Parameters.AddWithValue("@Role", roleFormatted);
                         cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
                         cmd.ExecuteNonQuery();
                     }

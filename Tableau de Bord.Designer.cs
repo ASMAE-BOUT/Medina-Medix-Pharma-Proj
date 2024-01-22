@@ -166,7 +166,7 @@
             this.btnnQuitter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnQuitter.Location = new System.Drawing.Point(567, 342);
             this.btnnQuitter.Name = "btnnQuitter";
-            this.btnnQuitter.Size = new System.Drawing.Size(151, 32);
+            this.btnnQuitter.Size = new System.Drawing.Size(151, 36);
             this.btnnQuitter.TabIndex = 16;
             this.btnnQuitter.Text = "Retour";
             this.btnnQuitter.UseVisualStyleBackColor = false;
@@ -178,7 +178,7 @@
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(567, 286);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 32);
+            this.button1.Size = new System.Drawing.Size(151, 37);
             this.button1.TabIndex = 17;
             this.button1.Text = "Afficher Manuel";
             this.button1.UseVisualStyleBackColor = false;

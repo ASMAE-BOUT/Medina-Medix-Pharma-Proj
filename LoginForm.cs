@@ -53,7 +53,7 @@ namespace Medina_Medix_Pharma_Proj
                     string query = "SELECT COUNT(1) FROM Utilisateurs WHERE Nom = @Nom AND MotDePasse = @MotDePasse";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@Nom", nomUtilisateur);
+                        cmd.Parameters.AddWithValue("@Nom", nomUtilisateur.ToUpper());
                         cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
                         return count > 0;
