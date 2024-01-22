@@ -19,11 +19,18 @@ Rapports et Analyses : Génération de rapports pour les ventes, les stocks et l
 * Base de Données : SQL Server
 * Autres Outils : Visual Studio
 
-![Capture d'écran 2024-01-18 202512](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/6344fd88-67e0-4edb-a35c-fb2ce23d692f)
+
+![Capture d'écran 2024-01-22 175709](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/30df04f7-31e2-4c91-bb08-1774f37c1e28)
+
+![Capture d'écran 2024-01-22 180037](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/5d3ef3e8-b2d1-4b88-96dc-3e54d64b3bc3)
+
 
 ![Capture d'écran 2024-01-18 202540](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/73e130e4-4801-4132-9100-b21d02336936)
 
-![Capture d'écran 2024-01-18 202621](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/94c90a80-cf08-470e-a3d4-1cf8f07ff08b)
-
 ![Capture d'écran 2024-01-18 202639](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/ac570015-1e13-4ee9-81e9-e6545453349d)
 
+![Capture d'écran 2024-01-22 175758](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/a916ae1c-7444-46b2-8e9f-35b43dbf1a6c)
+
+![Capture d'écran 2024-01-22 175740](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/1182486c-f150-404a-81da-0c4036d6fd45)
+
+![Capture d'écran 2024-01-22 180904](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/c79e26a8-6c53-44ad-80ff-d1924b2ca3f8)
