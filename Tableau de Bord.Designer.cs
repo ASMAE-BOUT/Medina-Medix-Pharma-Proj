@@ -47,7 +47,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DeepPink;
-            this.label3.Location = new System.Drawing.Point(8, 332);
+            this.label3.Location = new System.Drawing.Point(20, 423);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 18);
             this.label3.TabIndex = 9;
@@ -57,7 +57,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.pink_pharmacy_logo_hi;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 293);
+            this.pictureBox1.Location = new System.Drawing.Point(33, 384);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,7 +70,7 @@
             this.btnPOS.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPOS.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_pharma_100;
             this.btnPOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPOS.Location = new System.Drawing.Point(235, 21);
+            this.btnPOS.Location = new System.Drawing.Point(306, 64);
             this.btnPOS.Name = "btnPOS";
             this.btnPOS.Size = new System.Drawing.Size(174, 72);
             this.btnPOS.TabIndex = 5;
@@ -86,7 +86,7 @@
             this.btnFournisseur.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFournisseur.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_supplier_64;
             this.btnFournisseur.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFournisseur.Location = new System.Drawing.Point(448, 131);
+            this.btnFournisseur.Location = new System.Drawing.Point(544, 174);
             this.btnFournisseur.Name = "btnFournisseur";
             this.btnFournisseur.Size = new System.Drawing.Size(174, 72);
             this.btnFournisseur.TabIndex = 4;
@@ -102,7 +102,7 @@
             this.btnClient.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClient.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_clients_64;
             this.btnClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClient.Location = new System.Drawing.Point(448, 21);
+            this.btnClient.Location = new System.Drawing.Point(544, 64);
             this.btnClient.Name = "btnClient";
             this.btnClient.Size = new System.Drawing.Size(174, 72);
             this.btnClient.TabIndex = 3;
@@ -118,7 +118,7 @@
             this.btnOrdonnance.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdonnance.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_treatment_64;
             this.btnOrdonnance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrdonnance.Location = new System.Drawing.Point(235, 131);
+            this.btnOrdonnance.Location = new System.Drawing.Point(306, 174);
             this.btnOrdonnance.Name = "btnOrdonnance";
             this.btnOrdonnance.Size = new System.Drawing.Size(174, 72);
             this.btnOrdonnance.TabIndex = 2;
@@ -134,7 +134,7 @@
             this.btnStock.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStock.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_stock_64;
             this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStock.Location = new System.Drawing.Point(21, 131);
+            this.btnStock.Location = new System.Drawing.Point(55, 174);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(174, 72);
             this.btnStock.TabIndex = 1;
@@ -150,7 +150,7 @@
             this.btnMedicament.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMedicament.Image = global::Medina_Medix_Pharma_Proj.Properties.Resources.icons8_pilules_64;
             this.btnMedicament.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMedicament.Location = new System.Drawing.Point(21, 21);
+            this.btnMedicament.Location = new System.Drawing.Point(55, 64);
             this.btnMedicament.Name = "btnMedicament";
             this.btnMedicament.Size = new System.Drawing.Size(174, 72);
             this.btnMedicament.TabIndex = 0;
@@ -164,7 +164,7 @@
             // 
             this.btnnQuitter.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnnQuitter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnnQuitter.Location = new System.Drawing.Point(471, 281);
+            this.btnnQuitter.Location = new System.Drawing.Point(567, 342);
             this.btnnQuitter.Name = "btnnQuitter";
             this.btnnQuitter.Size = new System.Drawing.Size(151, 32);
             this.btnnQuitter.TabIndex = 16;
@@ -176,7 +176,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LavenderBlush;
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(471, 233);
+            this.button1.Location = new System.Drawing.Point(567, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 32);
             this.button1.TabIndex = 17;
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
-            this.ClientSize = new System.Drawing.Size(666, 361);
+            this.ClientSize = new System.Drawing.Size(802, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnnQuitter);
             this.Controls.Add(this.label3);
