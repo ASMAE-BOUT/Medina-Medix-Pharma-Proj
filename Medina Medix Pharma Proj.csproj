@@ -133,6 +133,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Pharma_ProjDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="POSForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +201,7 @@
     <None Include="Pharma_ProjDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Pharma_ProjDataSet1.Designer.cs</LastGenOutput>
     </None>
     <None Include="Pharma_ProjDataSet.xss">
       <DependentUpon>Pharma_ProjDataSet.xsd</DependentUpon>
