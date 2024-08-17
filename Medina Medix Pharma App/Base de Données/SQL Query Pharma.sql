@@ -145,3 +145,28 @@ ALTER TABLE Ventes ADD CONSTRAINT FK_Ventes_Medicaments FOREIGN KEY (MédicamentI
 
 DROP VIEW EtatDesStocks;
 
+
+
+
+ALTER TABLE Fournisseurs
+ADD MedicamentID INT;
+
+
+ALTER TABLE Fournisseurs
+ADD CONSTRAINT FK_Fournisseurs_MedicamentID FOREIGN KEY (MedicamentID)
+REFERENCES Médicaments(MédicamentID);
+
+
+UPDATE Fournisseurs
+SET MedicamentID = (SELECT TOP 1 MédicamentID FROM Médicaments);
+
+
+ALTER TABLE Ventes
+ADD CONSTRAINT FK_Ventes_ClientID FOREIGN KEY (ClientID)
+REFERENCES Clients(ClientID);
+
+
+UPDATE Ventes
+SET ClientID = (SELECT TOP 1 ClientID FROM Clients);
+
+

@@ -185,6 +185,9 @@
     <EmbeddedResource Include="MedicamentForm.resx">
       <DependentUpon>MedicamentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdonnanceForm.resx">
+      <DependentUpon>OrdonnanceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="POSForm.resx">
       <DependentUpon>POSForm.cs</DependentUpon>
     </EmbeddedResource>

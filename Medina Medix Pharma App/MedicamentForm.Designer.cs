@@ -8,6 +8,8 @@ namespace Medina_Medix_Pharma_Proj
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.TextBox txtQuantiteMinimaleInput;
+        private System.Windows.Forms.Button btnMettreAJourQuantiteMinimale;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -81,6 +83,8 @@ namespace Medina_Medix_Pharma_Proj
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.txtQuantiteMinimaleInput = new System.Windows.Forms.TextBox();
+            this.btnMettreAJourQuantiteMinimale = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -318,7 +322,7 @@ namespace Medina_Medix_Pharma_Proj
             this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 228);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(778, 209);
+            this.groupBox2.Size = new System.Drawing.Size(778, 193);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -344,7 +348,7 @@ namespace Medina_Medix_Pharma_Proj
             this.dgvMedicaments.DataSource = this.médicamentsBindingSource;
             this.dgvMedicaments.Location = new System.Drawing.Point(0, 6);
             this.dgvMedicaments.Name = "dgvMedicaments";
-            this.dgvMedicaments.Size = new System.Drawing.Size(772, 197);
+            this.dgvMedicaments.Size = new System.Drawing.Size(772, 185);
             this.dgvMedicaments.TabIndex = 0;
             this.dgvMedicaments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicaments_CellContentClick);
             // 
@@ -456,7 +460,7 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.btnAjouter.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnAjouter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjouter.Location = new System.Drawing.Point(687, 49);
+            this.btnAjouter.Location = new System.Drawing.Point(687, 29);
             this.btnAjouter.Name = "btnAjouter";
             this.btnAjouter.Size = new System.Drawing.Size(103, 26);
             this.btnAjouter.TabIndex = 18;
@@ -468,7 +472,7 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.btnModifier.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnModifier.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifier.Location = new System.Drawing.Point(687, 81);
+            this.btnModifier.Location = new System.Drawing.Point(687, 61);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(103, 26);
             this.btnModifier.TabIndex = 19;
@@ -480,7 +484,7 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.btnSupprimer.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnSupprimer.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSupprimer.Location = new System.Drawing.Point(687, 113);
+            this.btnSupprimer.Location = new System.Drawing.Point(687, 93);
             this.btnSupprimer.Name = "btnSupprimer";
             this.btnSupprimer.Size = new System.Drawing.Size(103, 26);
             this.btnSupprimer.TabIndex = 20;
@@ -492,7 +496,7 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.btnChargerImage.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnChargerImage.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChargerImage.Location = new System.Drawing.Point(687, 178);
+            this.btnChargerImage.Location = new System.Drawing.Point(687, 158);
             this.btnChargerImage.Name = "btnChargerImage";
             this.btnChargerImage.Size = new System.Drawing.Size(103, 26);
             this.btnChargerImage.TabIndex = 21;
@@ -504,7 +508,7 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.btnActualiser.BackColor = System.Drawing.Color.LavenderBlush;
             this.btnActualiser.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualiser.Location = new System.Drawing.Point(687, 146);
+            this.btnActualiser.Location = new System.Drawing.Point(687, 126);
             this.btnActualiser.Name = "btnActualiser";
             this.btnActualiser.Size = new System.Drawing.Size(103, 26);
             this.btnActualiser.TabIndex = 22;
@@ -542,12 +546,36 @@ namespace Medina_Medix_Pharma_Proj
             this.label14.TabIndex = 25;
             this.label14.Text = "Format_Taux: 00,00";
             // 
+            // txtQuantiteMinimaleInput
+            // 
+            this.txtQuantiteMinimaleInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantiteMinimaleInput.Location = new System.Drawing.Point(684, 429);
+            this.txtQuantiteMinimaleInput.Name = "txtQuantiteMinimaleInput";
+            this.txtQuantiteMinimaleInput.Size = new System.Drawing.Size(100, 23);
+            this.txtQuantiteMinimaleInput.TabIndex = 27;
+            this.txtQuantiteMinimaleInput.Text = "0";
+            this.txtQuantiteMinimaleInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // btnMettreAJourQuantiteMinimale
+            // 
+            this.btnMettreAJourQuantiteMinimale.BackColor = System.Drawing.Color.LavenderBlush;
+            this.btnMettreAJourQuantiteMinimale.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnMettreAJourQuantiteMinimale.Location = new System.Drawing.Point(687, 190);
+            this.btnMettreAJourQuantiteMinimale.Name = "btnMettreAJourQuantiteMinimale";
+            this.btnMettreAJourQuantiteMinimale.Size = new System.Drawing.Size(103, 26);
+            this.btnMettreAJourQuantiteMinimale.TabIndex = 28;
+            this.btnMettreAJourQuantiteMinimale.Text = "MàJ Qté Min";
+            this.btnMettreAJourQuantiteMinimale.UseVisualStyleBackColor = false;
+            this.btnMettreAJourQuantiteMinimale.Click += new System.EventHandler(this.btnMettreAJourQuantiteMinimale_Click);
+            // 
             // MedicamentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Pink;
             this.ClientSize = new System.Drawing.Size(802, 461);
+            this.Controls.Add(this.txtQuantiteMinimaleInput);
+            this.Controls.Add(this.btnMettreAJourQuantiteMinimale);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label6);

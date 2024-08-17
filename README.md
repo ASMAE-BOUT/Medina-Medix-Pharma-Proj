@@ -20,10 +20,9 @@ Rapports et Analyses : Génération de rapports pour les ventes, les stocks et l
 * Autres Outils : Visual Studio
 
 
-![Capture d'écran 2024-01-22 175709](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/30df04f7-31e2-4c91-bb08-1774f37c1e28)
+![Capture d'écran 2024-08-17 150110](https://github.com/user-attachments/assets/25c14b3e-b1e7-429a-9934-8033289ac22d)
 
 ![Capture d'écran 2024-01-22 180037](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/5d3ef3e8-b2d1-4b88-96dc-3e54d64b3bc3)
-
 
 ![Capture d'écran 2024-01-18 202540](https://github.com/ASMAE-BOUT/Medina-Medix-Pharma-Proj/assets/132204159/73e130e4-4801-4132-9100-b21d02336936)
 

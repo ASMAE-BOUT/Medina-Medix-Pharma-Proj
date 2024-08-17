@@ -6,6 +6,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblStockAlert;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -59,6 +60,29 @@
             ((System.ComponentModel.ISupportInitialize)(this.pharma_ProjDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            this.lblStockAlert = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lblStockAlert
+            // 
+            this.lblStockAlert.AutoSize = true;
+            this.lblStockAlert.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblStockAlert.ForeColor = System.Drawing.Color.Red;
+            this.lblStockAlert.Location = new System.Drawing.Point(24, 150);
+            this.lblStockAlert.Name = "lblStockAlert";
+            this.lblStockAlert.Size = new System.Drawing.Size(0, 18);
+            this.lblStockAlert.TabIndex = 23;
+            // 
+            // StockForm
+            // 
+            this.Controls.Add(this.lblStockAlert);
+            this.Name = "StockForm";
+            this.Load += new System.EventHandler(this.StockForm_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
             // 
             // groupBox1
             // 

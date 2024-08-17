@@ -46,6 +46,10 @@ namespace Medina_Medix_Pharma_Proj {
         
         private global::System.Data.DataRelation relationFK_Ventes_Medicaments;
         
+        private global::System.Data.DataRelation relationFK_Ventes_ClientID;
+        
+        private global::System.Data.DataRelation relationFK_Fournisseurs_MedicamentID;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -371,6 +375,8 @@ namespace Medina_Medix_Pharma_Proj {
             this.relationFK__Ordonnanc__Clien__5812160E = this.Relations["FK__Ordonnanc__Clien__5812160E"];
             this.relationFK__Stocks__Médicame__4BAC3F29 = this.Relations["FK__Stocks__Médicame__4BAC3F29"];
             this.relationFK_Ventes_Medicaments = this.Relations["FK_Ventes_Medicaments"];
+            this.relationFK_Ventes_ClientID = this.Relations["FK_Ventes_ClientID"];
+            this.relationFK_Fournisseurs_MedicamentID = this.Relations["FK_Fournisseurs_MedicamentID"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -409,6 +415,14 @@ namespace Medina_Medix_Pharma_Proj {
                         this.tableMédicaments.MédicamentIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableVentes.MédicamentIDColumn}, false);
             this.Relations.Add(this.relationFK_Ventes_Medicaments);
+            this.relationFK_Ventes_ClientID = new global::System.Data.DataRelation("FK_Ventes_ClientID", new global::System.Data.DataColumn[] {
+                        this.tableClients.ClientIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVentes.ClientIDColumn}, false);
+            this.Relations.Add(this.relationFK_Ventes_ClientID);
+            this.relationFK_Fournisseurs_MedicamentID = new global::System.Data.DataRelation("FK_Fournisseurs_MedicamentID", new global::System.Data.DataColumn[] {
+                        this.tableMédicaments.MédicamentIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFournisseurs.MedicamentIDColumn}, false);
+            this.Relations.Add(this.relationFK_Fournisseurs_MedicamentID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -874,6 +888,8 @@ namespace Medina_Medix_Pharma_Proj {
             
             private global::System.Data.DataColumn columnAdresse;
             
+            private global::System.Data.DataColumn columnMedicamentID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public FournisseursDataTable() {
@@ -941,6 +957,14 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MedicamentIDColumn {
+                get {
+                    return this.columnMedicamentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -976,13 +1000,17 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public FournisseursRow AddFournisseursRow(string Nom, string Contact, string Adresse) {
+            public FournisseursRow AddFournisseursRow(string Nom, string Contact, string Adresse, MédicamentsRow parentMédicamentsRowByFK_Fournisseurs_MedicamentID) {
                 FournisseursRow rowFournisseursRow = ((FournisseursRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Nom,
                         Contact,
-                        Adresse};
+                        Adresse,
+                        null};
+                if ((parentMédicamentsRowByFK_Fournisseurs_MedicamentID != null)) {
+                    columnValuesArray[4] = parentMédicamentsRowByFK_Fournisseurs_MedicamentID[0];
+                }
                 rowFournisseursRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFournisseursRow);
                 return rowFournisseursRow;
@@ -1016,6 +1044,7 @@ namespace Medina_Medix_Pharma_Proj {
                 this.columnNom = base.Columns["Nom"];
                 this.columnContact = base.Columns["Contact"];
                 this.columnAdresse = base.Columns["Adresse"];
+                this.columnMedicamentID = base.Columns["MedicamentID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1029,6 +1058,8 @@ namespace Medina_Medix_Pharma_Proj {
                 base.Columns.Add(this.columnContact);
                 this.columnAdresse = new global::System.Data.DataColumn("Adresse", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdresse);
+                this.columnMedicamentID = new global::System.Data.DataColumn("MedicamentID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMedicamentID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFournisseurID}, true));
                 this.columnFournisseurID.AutoIncrement = true;
@@ -2669,16 +2700,19 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public VentesRow AddVentesRow(System.DateTime Date, int ClientID, decimal Total, decimal Réduction, MédicamentsRow parentMédicamentsRowByFK_Ventes_Medicaments, int QuantitéVendue) {
+            public VentesRow AddVentesRow(System.DateTime Date, ClientsRow parentClientsRowByFK_Ventes_ClientID, decimal Total, decimal Réduction, MédicamentsRow parentMédicamentsRowByFK_Ventes_Medicaments, int QuantitéVendue) {
                 VentesRow rowVentesRow = ((VentesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Date,
-                        ClientID,
+                        null,
                         Total,
                         Réduction,
                         null,
                         QuantitéVendue};
+                if ((parentClientsRowByFK_Ventes_ClientID != null)) {
+                    columnValuesArray[2] = parentClientsRowByFK_Ventes_ClientID[0];
+                }
                 if ((parentMédicamentsRowByFK_Ventes_Medicaments != null)) {
                     columnValuesArray[5] = parentMédicamentsRowByFK_Ventes_Medicaments[0];
                 }
@@ -3279,6 +3313,17 @@ namespace Medina_Medix_Pharma_Proj {
                     return ((OrdonnancesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Ordonnanc__Clien__5812160E"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public VentesRow[] GetVentesRows() {
+                if ((this.Table.ChildRelations["FK_Ventes_ClientID"] == null)) {
+                    return new VentesRow[0];
+                }
+                else {
+                    return ((VentesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Ventes_ClientID"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3356,6 +3401,34 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int MedicamentID {
+                get {
+                    try {
+                        return ((int)(this[this.tableFournisseurs.MedicamentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MedicamentID\' dans la table \'Fournisseurs\' est DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableFournisseurs.MedicamentIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public MédicamentsRow MédicamentsRow {
+                get {
+                    return ((MédicamentsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Fournisseurs_MedicamentID"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Fournisseurs_MedicamentID"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNomNull() {
                 return this.IsNull(this.tableFournisseurs.NomColumn);
             }
@@ -3388,6 +3461,18 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAdresseNull() {
                 this[this.tableFournisseurs.AdresseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMedicamentIDNull() {
+                return this.IsNull(this.tableFournisseurs.MedicamentIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMedicamentIDNull() {
+                this[this.tableFournisseurs.MedicamentIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3777,6 +3862,17 @@ namespace Medina_Medix_Pharma_Proj {
                 }
                 else {
                     return ((VentesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Ventes_Medicaments"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public FournisseursRow[] GetFournisseursRows() {
+                if ((this.Table.ChildRelations["FK_Fournisseurs_MedicamentID"] == null)) {
+                    return new FournisseursRow[0];
+                }
+                else {
+                    return ((FournisseursRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Fournisseurs_MedicamentID"])));
                 }
             }
         }
@@ -4262,6 +4358,17 @@ namespace Medina_Medix_Pharma_Proj {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Ventes_Medicaments"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ClientsRow ClientsRow {
+                get {
+                    return ((ClientsRow)(this.GetParentRow(this.Table.ParentRelations["FK_Ventes_ClientID"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Ventes_ClientID"]);
                 }
             }
             
@@ -5240,10 +5347,11 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             tableMapping.ColumnMappings.Add("Nom", "Nom");
             tableMapping.ColumnMappings.Add("Contact", "Contact");
             tableMapping.ColumnMappings.Add("Adresse", "Adresse");
+            tableMapping.ColumnMappings.Add("MedicamentID", "MedicamentID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Fournisseurs] WHERE (([FournisseurID] = @Original_FournisseurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Contact = 1 AND [Contact] IS NULL) OR ([Contact] = @Original_Contact)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Fournisseurs] WHERE (([FournisseurID] = @Original_FournisseurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Contact = 1 AND [Contact] IS NULL) OR ([Contact] = @Original_Contact)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_MedicamentID = 1 AND [MedicamentID] IS NULL) OR ([MedicamentID] = @Original_MedicamentID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FournisseurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FournisseurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5252,23 +5360,27 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresse", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Fournisseurs] ([Nom], [Contact], [Adresse]) VALUES (@Nom, @Con" +
-                "tact, @Adresse);\r\nSELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs " +
-                "WHERE (FournisseurID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Fournisseurs] ([Nom], [Contact], [Adresse], [MedicamentID]) VALUES (" +
+                "@Nom, @Contact, @Adresse, @MedicamentID);\r\nSELECT FournisseurID, Nom, Contact, A" +
+                "dresse, MedicamentID FROM Fournisseurs WHERE (FournisseurID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Fournisseurs] SET [Nom] = @Nom, [Contact] = @Contact, [Adresse] = @Adresse WHERE (([FournisseurID] = @Original_FournisseurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Contact = 1 AND [Contact] IS NULL) OR ([Contact] = @Original_Contact)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)));
-SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (FournisseurID = @FournisseurID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Fournisseurs] SET [Nom] = @Nom, [Contact] = @Contact, [Adresse] = @Adresse, [MedicamentID] = @MedicamentID WHERE (([FournisseurID] = @Original_FournisseurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Contact = 1 AND [Contact] IS NULL) OR ([Contact] = @Original_Contact)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_MedicamentID = 1 AND [MedicamentID] IS NULL) OR ([MedicamentID] = @Original_MedicamentID)));
+SELECT FournisseurID, Nom, Contact, Adresse, MedicamentID FROM Fournisseurs WHERE (FournisseurID = @FournisseurID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FournisseurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FournisseurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5276,6 +5388,8 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresse", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MedicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MedicamentID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FournisseurID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FournisseurID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5292,7 +5406,8 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT FournisseurID, Nom, Contact, Adresse FROM dbo.Fournisseurs";
+            this._commandCollection[0].CommandText = "SELECT        FournisseurID, Nom, Contact, Adresse, MedicamentID\r\nFROM           " +
+                " Fournisseurs";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5353,7 +5468,7 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse) {
+        public virtual int Delete(int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse, global::System.Nullable<int> Original_MedicamentID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FournisseurID));
             if ((Original_Nom == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -5379,6 +5494,14 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Adresse));
             }
+            if ((Original_MedicamentID.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_MedicamentID.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5399,7 +5522,7 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nom, string Contact, string Adresse) {
+        public virtual int Insert(string Nom, string Contact, string Adresse, global::System.Nullable<int> MedicamentID) {
             if ((Nom == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5417,6 +5540,12 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Adresse));
+            }
+            if ((MedicamentID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(MedicamentID.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5438,7 +5567,7 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nom, string Contact, string Adresse, int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse, int FournisseurID) {
+        public virtual int Update(string Nom, string Contact, string Adresse, global::System.Nullable<int> MedicamentID, int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse, global::System.Nullable<int> Original_MedicamentID, int FournisseurID) {
             if ((Nom == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -5457,32 +5586,46 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Adresse));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_FournisseurID));
-            if ((Original_Nom == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((MedicamentID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(MedicamentID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Nom));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_FournisseurID));
+            if ((Original_Nom == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nom));
             }
             if ((Original_Contact == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Contact));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Contact));
             }
             if ((Original_Adresse == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Adresse));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Adresse));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(FournisseurID));
+            if ((Original_MedicamentID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_MedicamentID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(FournisseurID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5503,8 +5646,8 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nom, string Contact, string Adresse, int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse) {
-            return this.Update(Nom, Contact, Adresse, Original_FournisseurID, Original_Nom, Original_Contact, Original_Adresse, Original_FournisseurID);
+        public virtual int Update(string Nom, string Contact, string Adresse, global::System.Nullable<int> MedicamentID, int Original_FournisseurID, string Original_Nom, string Original_Contact, string Original_Adresse, global::System.Nullable<int> Original_MedicamentID) {
+            return this.Update(Nom, Contact, Adresse, MedicamentID, Original_FournisseurID, Original_Nom, Original_Contact, Original_Adresse, Original_MedicamentID, Original_FournisseurID);
         }
     }
     
@@ -7579,7 +7722,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Ventes] WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Ventes] WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VenteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VenteID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7596,7 +7739,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuantitéVendue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuantitéVendue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Ventes] ([Date], [ClientID], [Total], [Réduction], [MédicamentID], [QuantitéVendue]) VALUES (@Date, @ClientID, @Total, @Réduction, @MédicamentID, @QuantitéVendue);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Ventes] ([Date], [ClientID], [Total], [Réduction], [MédicamentID], [QuantitéVendue]) VALUES (@Date, @ClientID, @Total, @Réduction, @MédicamentID, @QuantitéVendue);
 SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FROM Ventes WHERE (VenteID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7607,7 +7750,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuantitéVendue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuantitéVendue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ventes] SET [Date] = @Date, [ClientID] = @ClientID, [Total] = @Total, [Réduction] = @Réduction, [MédicamentID] = @MédicamentID, [QuantitéVendue] = @QuantitéVendue WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Ventes] SET [Date] = @Date, [ClientID] = @ClientID, [Total] = @Total, [Réduction] = @Réduction, [MédicamentID] = @MédicamentID, [QuantitéVendue] = @QuantitéVendue WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)));
 SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FROM Ventes WHERE (VenteID = @VenteID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7645,8 +7788,8 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FR" +
-                "OM dbo.Ventes";
+            this._commandCollection[0].CommandText = "SELECT        VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVe" +
+                "ndue\r\nFROM            Ventes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
