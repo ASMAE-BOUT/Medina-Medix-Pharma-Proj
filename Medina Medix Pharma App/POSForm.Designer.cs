@@ -45,7 +45,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvVentes = new System.Windows.Forms.DataGridView();
             this.ventesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSet();
+            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_AppDataSet();
             this.ventesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stocksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnAjouter = new System.Windows.Forms.Button();
@@ -56,8 +56,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnRetour = new System.Windows.Forms.Button();
             this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stocksTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.StocksTableAdapter();
-            this.ventesTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.VentesTableAdapter();
+            this.stocksTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.StocksTableAdapter();
+            this.ventesTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.VentesTableAdapter();
             this.ventesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmaProjDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.venteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -465,15 +465,15 @@
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnActualiser;
-        private Pharma_ProjDataSet pharma_ProjDataSet;
+        private Pharma_AppDataSet pharma_ProjDataSet;
         private System.Windows.Forms.BindingSource stocksBindingSource;
-        private Pharma_ProjDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
+        private Pharma_AppDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRetour;
         private System.Windows.Forms.BindingSource stocksBindingSource1;
         private System.Windows.Forms.BindingSource ventesBindingSource;
-        private Pharma_ProjDataSetTableAdapters.VentesTableAdapter ventesTableAdapter;
+        private Pharma_AppDataSetTableAdapters.VentesTableAdapter ventesTableAdapter;
         private System.Windows.Forms.ComboBox cmbMedicamentID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtQuantiteVendue;

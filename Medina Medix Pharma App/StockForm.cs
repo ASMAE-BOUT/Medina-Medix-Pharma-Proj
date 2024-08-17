@@ -7,7 +7,7 @@ namespace Medina_Medix_Pharma_Proj
 {
     public partial class StockForm : Form
     {
-        private string connectionString = @"Server=DESKTOP-3RKAS3I; Database=Pharma Proj; User Id=PharmaLogin; Password=PharmaApp159;";
+        private string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
 
         public static DataTable DataSource { get; private set; }
 

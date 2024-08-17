@@ -20,9 +20,9 @@ namespace Medina_Medix_Pharma_Proj {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("Pharma_ProjDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("Pharma_AppDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class Pharma_ProjDataSet : global::System.Data.DataSet {
+    public partial class Pharma_AppDataSet : global::System.Data.DataSet {
         
         private ClientsDataTable tableClients;
         
@@ -38,9 +38,11 @@ namespace Medina_Medix_Pharma_Proj {
         
         private VentesDataTable tableVentes;
         
-        private global::System.Data.DataRelation relationFK__Ordonnanc__Clien__4222D4EF;
+        private EtatDesStocksDataTable tableEtatDesStocks;
         
-        private global::System.Data.DataRelation relationFK__Stocks__Médicame__398D8EEE;
+        private global::System.Data.DataRelation relationFK__Ordonnanc__Clien__5812160E;
+        
+        private global::System.Data.DataRelation relationFK__Stocks__Médicame__4BAC3F29;
         
         private global::System.Data.DataRelation relationFK_Ventes_Medicaments;
         
@@ -48,7 +50,7 @@ namespace Medina_Medix_Pharma_Proj {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public Pharma_ProjDataSet() {
+        public Pharma_AppDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -59,7 +61,7 @@ namespace Medina_Medix_Pharma_Proj {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected Pharma_ProjDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected Pharma_AppDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -92,6 +94,9 @@ namespace Medina_Medix_Pharma_Proj {
                 }
                 if ((ds.Tables["Ventes"] != null)) {
                     base.Tables.Add(new VentesDataTable(ds.Tables["Ventes"]));
+                }
+                if ((ds.Tables["EtatDesStocks"] != null)) {
+                    base.Tables.Add(new EtatDesStocksDataTable(ds.Tables["EtatDesStocks"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -183,6 +188,16 @@ namespace Medina_Medix_Pharma_Proj {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EtatDesStocksDataTable EtatDesStocks {
+            get {
+                return this.tableEtatDesStocks;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -223,7 +238,7 @@ namespace Medina_Medix_Pharma_Proj {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            Pharma_ProjDataSet cln = ((Pharma_ProjDataSet)(base.Clone()));
+            Pharma_AppDataSet cln = ((Pharma_AppDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -268,6 +283,9 @@ namespace Medina_Medix_Pharma_Proj {
                 }
                 if ((ds.Tables["Ventes"] != null)) {
                     base.Tables.Add(new VentesDataTable(ds.Tables["Ventes"]));
+                }
+                if ((ds.Tables["EtatDesStocks"] != null)) {
+                    base.Tables.Add(new EtatDesStocksDataTable(ds.Tables["EtatDesStocks"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -344,17 +362,23 @@ namespace Medina_Medix_Pharma_Proj {
                     this.tableVentes.InitVars();
                 }
             }
-            this.relationFK__Ordonnanc__Clien__4222D4EF = this.Relations["FK__Ordonnanc__Clien__4222D4EF"];
-            this.relationFK__Stocks__Médicame__398D8EEE = this.Relations["FK__Stocks__Médicame__398D8EEE"];
+            this.tableEtatDesStocks = ((EtatDesStocksDataTable)(base.Tables["EtatDesStocks"]));
+            if ((initTable == true)) {
+                if ((this.tableEtatDesStocks != null)) {
+                    this.tableEtatDesStocks.InitVars();
+                }
+            }
+            this.relationFK__Ordonnanc__Clien__5812160E = this.Relations["FK__Ordonnanc__Clien__5812160E"];
+            this.relationFK__Stocks__Médicame__4BAC3F29 = this.Relations["FK__Stocks__Médicame__4BAC3F29"];
             this.relationFK_Ventes_Medicaments = this.Relations["FK_Ventes_Medicaments"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "Pharma_ProjDataSet";
+            this.DataSetName = "Pharma_AppDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/Pharma_ProjDataSet.xsd";
+            this.Namespace = "http://tempuri.org/Pharma_AppDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableClients = new ClientsDataTable();
@@ -371,14 +395,16 @@ namespace Medina_Medix_Pharma_Proj {
             base.Tables.Add(this.tableUtilisateurs);
             this.tableVentes = new VentesDataTable();
             base.Tables.Add(this.tableVentes);
-            this.relationFK__Ordonnanc__Clien__4222D4EF = new global::System.Data.DataRelation("FK__Ordonnanc__Clien__4222D4EF", new global::System.Data.DataColumn[] {
+            this.tableEtatDesStocks = new EtatDesStocksDataTable();
+            base.Tables.Add(this.tableEtatDesStocks);
+            this.relationFK__Ordonnanc__Clien__5812160E = new global::System.Data.DataRelation("FK__Ordonnanc__Clien__5812160E", new global::System.Data.DataColumn[] {
                         this.tableClients.ClientIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrdonnances.ClientIDColumn}, false);
-            this.Relations.Add(this.relationFK__Ordonnanc__Clien__4222D4EF);
-            this.relationFK__Stocks__Médicame__398D8EEE = new global::System.Data.DataRelation("FK__Stocks__Médicame__398D8EEE", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Ordonnanc__Clien__5812160E);
+            this.relationFK__Stocks__Médicame__4BAC3F29 = new global::System.Data.DataRelation("FK__Stocks__Médicame__4BAC3F29", new global::System.Data.DataColumn[] {
                         this.tableMédicaments.MédicamentIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableStocks.MédicamentIDColumn}, false);
-            this.Relations.Add(this.relationFK__Stocks__Médicame__398D8EEE);
+            this.Relations.Add(this.relationFK__Stocks__Médicame__4BAC3F29);
             this.relationFK_Ventes_Medicaments = new global::System.Data.DataRelation("FK_Ventes_Medicaments", new global::System.Data.DataColumn[] {
                         this.tableMédicaments.MédicamentIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableVentes.MédicamentIDColumn}, false);
@@ -429,6 +455,12 @@ namespace Medina_Medix_Pharma_Proj {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeEtatDesStocks() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -438,7 +470,7 @@ namespace Medina_Medix_Pharma_Proj {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+            Pharma_AppDataSet ds = new Pharma_AppDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -502,6 +534,9 @@ namespace Medina_Medix_Pharma_Proj {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void VentesRowChangeEventHandler(object sender, VentesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void EtatDesStocksRowChangeEventHandler(object sender, EtatDesStocksRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -696,10 +731,8 @@ namespace Medina_Medix_Pharma_Proj {
                 this.columnClientID.ReadOnly = true;
                 this.columnClientID.Unique = true;
                 this.columnNom.MaxLength = 100;
-                this.columnAdresse.AllowDBNull = false;
                 this.columnAdresse.MaxLength = 255;
                 this.columnTéléphone.MaxLength = 20;
-                this.columnRéduction.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -767,7 +800,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1074,7 +1107,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1509,7 +1542,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1685,15 +1718,15 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public OrdonnancesRow AddOrdonnancesRow(System.DateTime Date, ClientsRow parentClientsRowByFK__Ordonnanc__Clien__4222D4EF, decimal Total) {
+            public OrdonnancesRow AddOrdonnancesRow(System.DateTime Date, ClientsRow parentClientsRowByFK__Ordonnanc__Clien__5812160E, decimal Total) {
                 OrdonnancesRow rowOrdonnancesRow = ((OrdonnancesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Date,
                         null,
                         Total};
-                if ((parentClientsRowByFK__Ordonnanc__Clien__4222D4EF != null)) {
-                    columnValuesArray[2] = parentClientsRowByFK__Ordonnanc__Clien__4222D4EF[0];
+                if ((parentClientsRowByFK__Ordonnanc__Clien__5812160E != null)) {
+                    columnValuesArray[2] = parentClientsRowByFK__Ordonnanc__Clien__5812160E[0];
                 }
                 rowOrdonnancesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrdonnancesRow);
@@ -1816,7 +1849,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1992,15 +2025,15 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StocksRow AddStocksRow(MédicamentsRow parentMédicamentsRowByFK__Stocks__Médicame__398D8EEE, int Quantité, System.DateTime DateEntrée) {
+            public StocksRow AddStocksRow(MédicamentsRow parentMédicamentsRowByFK__Stocks__Médicame__4BAC3F29, int Quantité, System.DateTime DateEntrée) {
                 StocksRow rowStocksRow = ((StocksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         Quantité,
                         DateEntrée};
-                if ((parentMédicamentsRowByFK__Stocks__Médicame__398D8EEE != null)) {
-                    columnValuesArray[1] = parentMédicamentsRowByFK__Stocks__Médicame__398D8EEE[0];
+                if ((parentMédicamentsRowByFK__Stocks__Médicame__4BAC3F29 != null)) {
+                    columnValuesArray[1] = parentMédicamentsRowByFK__Stocks__Médicame__4BAC3F29[0];
                 }
                 rowStocksRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStocksRow);
@@ -2123,7 +2156,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2430,7 +2463,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2779,7 +2812,7 @@ namespace Medina_Medix_Pharma_Proj {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                Pharma_ProjDataSet ds = new Pharma_ProjDataSet();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2798,6 +2831,267 @@ namespace Medina_Medix_Pharma_Proj {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "VentesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EtatDesStocksDataTable : global::System.Data.TypedTableBase<EtatDesStocksRow> {
+            
+            private global::System.Data.DataColumn columnMédicamentID;
+            
+            private global::System.Data.DataColumn columnQuantitéTotale;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksDataTable() {
+                this.TableName = "EtatDesStocks";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal EtatDesStocksDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected EtatDesStocksDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MédicamentIDColumn {
+                get {
+                    return this.columnMédicamentID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn QuantitéTotaleColumn {
+                get {
+                    return this.columnQuantitéTotale;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksRow this[int index] {
+                get {
+                    return ((EtatDesStocksRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event EtatDesStocksRowChangeEventHandler EtatDesStocksRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event EtatDesStocksRowChangeEventHandler EtatDesStocksRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event EtatDesStocksRowChangeEventHandler EtatDesStocksRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event EtatDesStocksRowChangeEventHandler EtatDesStocksRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddEtatDesStocksRow(EtatDesStocksRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksRow AddEtatDesStocksRow(int MédicamentID, int QuantitéTotale) {
+                EtatDesStocksRow rowEtatDesStocksRow = ((EtatDesStocksRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MédicamentID,
+                        QuantitéTotale};
+                rowEtatDesStocksRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEtatDesStocksRow);
+                return rowEtatDesStocksRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EtatDesStocksDataTable cln = ((EtatDesStocksDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EtatDesStocksDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnMédicamentID = base.Columns["MédicamentID"];
+                this.columnQuantitéTotale = base.Columns["QuantitéTotale"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnMédicamentID = new global::System.Data.DataColumn("MédicamentID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMédicamentID);
+                this.columnQuantitéTotale = new global::System.Data.DataColumn("QuantitéTotale", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantitéTotale);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksRow NewEtatDesStocksRow() {
+                return ((EtatDesStocksRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EtatDesStocksRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EtatDesStocksRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EtatDesStocksRowChanged != null)) {
+                    this.EtatDesStocksRowChanged(this, new EtatDesStocksRowChangeEvent(((EtatDesStocksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EtatDesStocksRowChanging != null)) {
+                    this.EtatDesStocksRowChanging(this, new EtatDesStocksRowChangeEvent(((EtatDesStocksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EtatDesStocksRowDeleted != null)) {
+                    this.EtatDesStocksRowDeleted(this, new EtatDesStocksRowChangeEvent(((EtatDesStocksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EtatDesStocksRowDeleting != null)) {
+                    this.EtatDesStocksRowDeleting(this, new EtatDesStocksRowChangeEvent(((EtatDesStocksRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveEtatDesStocksRow(EtatDesStocksRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                Pharma_AppDataSet ds = new Pharma_AppDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EtatDesStocksDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2883,7 +3177,12 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Adresse {
                 get {
-                    return ((string)(this[this.tableClients.AdresseColumn]));
+                    try {
+                        return ((string)(this[this.tableClients.AdresseColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Adresse\' dans la table \'Clients\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableClients.AdresseColumn] = value;
@@ -2910,7 +3209,12 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public decimal Réduction {
                 get {
-                    return ((decimal)(this[this.tableClients.RéductionColumn]));
+                    try {
+                        return ((decimal)(this[this.tableClients.RéductionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'Réduction\' dans la table \'Clients\' est DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableClients.RéductionColumn] = value;
@@ -2931,6 +3235,18 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAdresseNull() {
+                return this.IsNull(this.tableClients.AdresseColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAdresseNull() {
+                this[this.tableClients.AdresseColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTéléphoneNull() {
                 return this.IsNull(this.tableClients.TéléphoneColumn);
             }
@@ -2943,12 +3259,24 @@ namespace Medina_Medix_Pharma_Proj {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRéductionNull() {
+                return this.IsNull(this.tableClients.RéductionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRéductionNull() {
+                this[this.tableClients.RéductionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrdonnancesRow[] GetOrdonnancesRows() {
-                if ((this.Table.ChildRelations["FK__Ordonnanc__Clien__4222D4EF"] == null)) {
+                if ((this.Table.ChildRelations["FK__Ordonnanc__Clien__5812160E"] == null)) {
                     return new OrdonnancesRow[0];
                 }
                 else {
-                    return ((OrdonnancesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Ordonnanc__Clien__4222D4EF"])));
+                    return ((OrdonnancesRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Ordonnanc__Clien__5812160E"])));
                 }
             }
         }
@@ -3433,11 +3761,11 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StocksRow[] GetStocksRows() {
-                if ((this.Table.ChildRelations["FK__Stocks__Médicame__398D8EEE"] == null)) {
+                if ((this.Table.ChildRelations["FK__Stocks__Médicame__4BAC3F29"] == null)) {
                     return new StocksRow[0];
                 }
                 else {
-                    return ((StocksRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Stocks__Médicame__398D8EEE"])));
+                    return ((StocksRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Stocks__Médicame__4BAC3F29"])));
                 }
             }
             
@@ -3530,10 +3858,10 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ClientsRow ClientsRow {
                 get {
-                    return ((ClientsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Ordonnanc__Clien__4222D4EF"])));
+                    return ((ClientsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Ordonnanc__Clien__5812160E"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Ordonnanc__Clien__4222D4EF"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Ordonnanc__Clien__5812160E"]);
                 }
             }
             
@@ -3651,10 +3979,10 @@ namespace Medina_Medix_Pharma_Proj {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MédicamentsRow MédicamentsRow {
                 get {
-                    return ((MédicamentsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Stocks__Médicame__398D8EEE"])));
+                    return ((MédicamentsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Stocks__Médicame__4BAC3F29"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Stocks__Médicame__398D8EEE"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Stocks__Médicame__4BAC3F29"]);
                 }
             }
             
@@ -4011,6 +4339,79 @@ namespace Medina_Medix_Pharma_Proj {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EtatDesStocksRow : global::System.Data.DataRow {
+            
+            private EtatDesStocksDataTable tableEtatDesStocks;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal EtatDesStocksRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEtatDesStocks = ((EtatDesStocksDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int MédicamentID {
+                get {
+                    try {
+                        return ((int)(this[this.tableEtatDesStocks.MédicamentIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'MédicamentID\' dans la table \'EtatDesStocks\' est DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableEtatDesStocks.MédicamentIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int QuantitéTotale {
+                get {
+                    try {
+                        return ((int)(this[this.tableEtatDesStocks.QuantitéTotaleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'QuantitéTotale\' dans la table \'EtatDesStocks\' est DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableEtatDesStocks.QuantitéTotaleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMédicamentIDNull() {
+                return this.IsNull(this.tableEtatDesStocks.MédicamentIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMédicamentIDNull() {
+                this[this.tableEtatDesStocks.MédicamentIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsQuantitéTotaleNull() {
+                return this.IsNull(this.tableEtatDesStocks.QuantitéTotaleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetQuantitéTotaleNull() {
+                this[this.tableEtatDesStocks.QuantitéTotaleColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -4247,9 +4648,43 @@ namespace Medina_Medix_Pharma_Proj {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class EtatDesStocksRowChangeEvent : global::System.EventArgs {
+            
+            private EtatDesStocksRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksRowChangeEvent(EtatDesStocksRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EtatDesStocksRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
-namespace Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters {
+namespace Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters {
     
     
     /// <summary>
@@ -4381,20 +4816,22 @@ namespace Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Clients] WHERE (([ClientID] = @Original_ClientID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ([Adresse] = @Original_Adresse) AND ((@IsNull_Téléphone = 1 AND [Téléphone] IS NULL) OR ([Téléphone] = @Original_Téléphone)) AND ([Réduction] = @Original_Réduction))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Clients] WHERE (([ClientID] = @Original_ClientID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_Téléphone = 1 AND [Téléphone] IS NULL) OR ([Téléphone] = @Original_Téléphone)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresse", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Téléphone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Téléphone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Téléphone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Téléphone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Réduction", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Réduction", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Réduction", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Réduction", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Clients] ([Nom], [Adresse], [Téléphone], [Réduction]) VALUES (@Nom, " +
-                "@Adresse, @Téléphone, @Réduction);\r\nSELECT ClientID, Nom, Adresse, Téléphone, Ré" +
-                "duction FROM Clients WHERE (ClientID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Clients] ([Nom], [Adresse], [Téléphone], [Réduction]) VALUES (" +
+                "@Nom, @Adresse, @Téléphone, @Réduction);\r\nSELECT ClientID, Nom, Adresse, Télépho" +
+                "ne, Réduction FROM Clients WHERE (ClientID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4402,7 +4839,7 @@ namespace Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Réduction", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Réduction", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Clients] SET [Nom] = @Nom, [Adresse] = @Adresse, [Téléphone] = @Téléphone, [Réduction] = @Réduction WHERE (([ClientID] = @Original_ClientID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ([Adresse] = @Original_Adresse) AND ((@IsNull_Téléphone = 1 AND [Téléphone] IS NULL) OR ([Téléphone] = @Original_Téléphone)) AND ([Réduction] = @Original_Réduction));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Clients] SET [Nom] = @Nom, [Adresse] = @Adresse, [Téléphone] = @Téléphone, [Réduction] = @Réduction WHERE (([ClientID] = @Original_ClientID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Adresse = 1 AND [Adresse] IS NULL) OR ([Adresse] = @Original_Adresse)) AND ((@IsNull_Téléphone = 1 AND [Téléphone] IS NULL) OR ([Téléphone] = @Original_Téléphone)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)));
 SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (ClientID = @ClientID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4412,9 +4849,11 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ClientID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Adresse", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Adresse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Adresse", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Téléphone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Téléphone", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Téléphone", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Téléphone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Réduction", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Réduction", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Réduction", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Réduction", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ClientID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ClientID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4423,7 +4862,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4432,8 +4871,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        ClientID, Nom, Adresse, Téléphone, Réduction\r\nFROM            Clien" +
-                "ts";
+            this._commandCollection[0].CommandText = "SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM dbo.Clients";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4441,7 +4879,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.ClientsDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.ClientsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4454,9 +4892,9 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.ClientsDataTable GetData() {
+        public virtual Pharma_AppDataSet.ClientsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.ClientsDataTable dataTable = new Pharma_ProjDataSet.ClientsDataTable();
+            Pharma_AppDataSet.ClientsDataTable dataTable = new Pharma_AppDataSet.ClientsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4464,14 +4902,14 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.ClientsDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.ClientsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Clients");
         }
         
@@ -4494,7 +4932,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, decimal Original_Réduction) {
+        public virtual int Delete(int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, global::System.Nullable<decimal> Original_Réduction) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ClientID));
             if ((Original_Nom == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4505,20 +4943,29 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Nom));
             }
             if ((Original_Adresse == null)) {
-                throw new global::System.ArgumentNullException("Original_Adresse");
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Adresse));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Adresse));
             }
             if ((Original_Téléphone == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Téléphone));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Téléphone));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_Réduction));
+            if ((Original_Réduction.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_Réduction.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4539,7 +4986,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Nom, string Adresse, string Téléphone, decimal Réduction) {
+        public virtual int Insert(string Nom, string Adresse, string Téléphone, global::System.Nullable<decimal> Réduction) {
             if ((Nom == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4547,7 +4994,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nom));
             }
             if ((Adresse == null)) {
-                throw new global::System.ArgumentNullException("Adresse");
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Adresse));
@@ -4558,7 +5005,12 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Téléphone));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(Réduction));
+            if ((Réduction.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(Réduction.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4579,7 +5031,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nom, string Adresse, string Téléphone, decimal Réduction, int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, decimal Original_Réduction, int ClientID) {
+        public virtual int Update(string Nom, string Adresse, string Téléphone, global::System.Nullable<decimal> Réduction, int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, global::System.Nullable<decimal> Original_Réduction, int ClientID) {
             if ((Nom == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4587,7 +5039,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nom));
             }
             if ((Adresse == null)) {
-                throw new global::System.ArgumentNullException("Adresse");
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Adresse));
@@ -4598,7 +5050,12 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Téléphone));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Réduction));
+            if ((Réduction.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Réduction.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ClientID));
             if ((Original_Nom == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
@@ -4609,21 +5066,30 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Nom));
             }
             if ((Original_Adresse == null)) {
-                throw new global::System.ArgumentNullException("Original_Adresse");
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Adresse));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Adresse));
             }
             if ((Original_Téléphone == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Téléphone));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Téléphone));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_Réduction));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ClientID));
+            if ((Original_Réduction.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_Réduction.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(ClientID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4644,7 +5110,7 @@ SELECT ClientID, Nom, Adresse, Téléphone, Réduction FROM Clients WHERE (Clien
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Nom, string Adresse, string Téléphone, decimal Réduction, int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, decimal Original_Réduction) {
+        public virtual int Update(string Nom, string Adresse, string Téléphone, global::System.Nullable<decimal> Réduction, int Original_ClientID, string Original_Nom, string Original_Adresse, string Original_Téléphone, global::System.Nullable<decimal> Original_Réduction) {
             return this.Update(Nom, Adresse, Téléphone, Réduction, Original_ClientID, Original_Nom, Original_Adresse, Original_Téléphone, Original_Réduction, Original_ClientID);
         }
     }
@@ -4817,7 +5283,7 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4834,7 +5300,7 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.FournisseursDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.FournisseursDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4847,9 +5313,9 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.FournisseursDataTable GetData() {
+        public virtual Pharma_AppDataSet.FournisseursDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.FournisseursDataTable dataTable = new Pharma_ProjDataSet.FournisseursDataTable();
+            Pharma_AppDataSet.FournisseursDataTable dataTable = new Pharma_AppDataSet.FournisseursDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4857,14 +5323,14 @@ SELECT FournisseurID, Nom, Contact, Adresse FROM Fournisseurs WHERE (Fournisseur
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.FournisseursDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.FournisseursDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Fournisseurs");
         }
         
@@ -5291,7 +5757,7 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5310,7 +5776,7 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.MédicamentsDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.MédicamentsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5323,9 +5789,9 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.MédicamentsDataTable GetData() {
+        public virtual Pharma_AppDataSet.MédicamentsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.MédicamentsDataTable dataTable = new Pharma_ProjDataSet.MédicamentsDataTable();
+            Pharma_AppDataSet.MédicamentsDataTable dataTable = new Pharma_AppDataSet.MédicamentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5333,14 +5799,14 @@ SELECT MédicamentID, Photo, Désignation, PrixAchat, PrixVente, QuantitéMinima
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.MédicamentsDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.MédicamentsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Médicaments");
         }
         
@@ -5971,7 +6437,7 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5988,7 +6454,7 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.OrdonnancesDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.OrdonnancesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6001,9 +6467,9 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.OrdonnancesDataTable GetData() {
+        public virtual Pharma_AppDataSet.OrdonnancesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.OrdonnancesDataTable dataTable = new Pharma_ProjDataSet.OrdonnancesDataTable();
+            Pharma_AppDataSet.OrdonnancesDataTable dataTable = new Pharma_AppDataSet.OrdonnancesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6011,14 +6477,14 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.OrdonnancesDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.OrdonnancesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Ordonnances");
         }
         
@@ -6324,7 +6790,7 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Stocks] WHERE (([StockID] = @Original_StockID) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_Quantité = 1 AND [Quantité] IS NULL) OR ([Quantité] = @Original_Quantité)) AND ((@IsNull_DateEntrée = 1 AND [DateEntrée] IS NULL) OR ([DateEntrée] = @Original_DateEntrée)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Stocks] WHERE (([StockID] = @Original_StockID) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_Quantité = 1 AND [Quantité] IS NULL) OR ([Quantité] = @Original_Quantité)) AND ((@IsNull_DateEntrée = 1 AND [DateEntrée] IS NULL) OR ([DateEntrée] = @Original_DateEntrée)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StockID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StockID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MédicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MédicamentID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6335,16 +6801,16 @@ SELECT OrdonnanceID, Date, ClientID, Total FROM Ordonnances WHERE (OrdonnanceID 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DateEntrée", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateEntrée", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Stocks] ([MédicamentID], [Quantité], [DateEntrée]) VALUES (@Médicame" +
-                "ntID, @Quantité, @DateEntrée);\r\nSELECT StockID, MédicamentID, Quantité, DateEntr" +
-                "ée FROM Stocks WHERE (StockID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Stocks] ([MédicamentID], [Quantité], [DateEntrée]) VALUES (@Mé" +
+                "dicamentID, @Quantité, @DateEntrée);\r\nSELECT StockID, MédicamentID, Quantité, Da" +
+                "teEntrée FROM Stocks WHERE (StockID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MédicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MédicamentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantité", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantité", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEntrée", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateEntrée", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Stocks] SET [MédicamentID] = @MédicamentID, [Quantité] = @Quantité, [DateEntrée] = @DateEntrée WHERE (([StockID] = @Original_StockID) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_Quantité = 1 AND [Quantité] IS NULL) OR ([Quantité] = @Original_Quantité)) AND ((@IsNull_DateEntrée = 1 AND [DateEntrée] IS NULL) OR ([DateEntrée] = @Original_DateEntrée)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Stocks] SET [MédicamentID] = @MédicamentID, [Quantité] = @Quantité, [DateEntrée] = @DateEntrée WHERE (([StockID] = @Original_StockID) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_Quantité = 1 AND [Quantité] IS NULL) OR ([Quantité] = @Original_Quantité)) AND ((@IsNull_DateEntrée = 1 AND [DateEntrée] IS NULL) OR ([DateEntrée] = @Original_DateEntrée)));
 SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID = @StockID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MédicamentID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MédicamentID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6364,7 +6830,7 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6373,8 +6839,7 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        StockID, MédicamentID, Quantité, DateEntrée\r\nFROM            Stocks" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT StockID, MédicamentID, Quantité, DateEntrée FROM dbo.Stocks";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6382,7 +6847,7 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.StocksDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.StocksDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6395,9 +6860,9 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.StocksDataTable GetData() {
+        public virtual Pharma_AppDataSet.StocksDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.StocksDataTable dataTable = new Pharma_ProjDataSet.StocksDataTable();
+            Pharma_AppDataSet.StocksDataTable dataTable = new Pharma_AppDataSet.StocksDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6405,14 +6870,14 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.StocksDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.StocksDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Stocks");
         }
         
@@ -6718,7 +7183,7 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Utilisateurs] WHERE (([UtilisateurID] = @Original_UtilisateurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_MotDePasse = 1 AND [MotDePasse] IS NULL) OR ([MotDePasse] = @Original_MotDePasse)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Utilisateurs] WHERE (([UtilisateurID] = @Original_UtilisateurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_MotDePasse = 1 AND [MotDePasse] IS NULL) OR ([MotDePasse] = @Original_MotDePasse)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UtilisateurID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UtilisateurID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Nom", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -6729,16 +7194,16 @@ SELECT StockID, MédicamentID, Quantité, DateEntrée FROM Stocks WHERE (StockID
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MotDePasse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MotDePasse", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Utilisateurs] ([Nom], [Role], [MotDePasse]) VALUES (@Nom, @Role, @Mo" +
-                "tDePasse);\r\nSELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE " +
-                "(UtilisateurID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Utilisateurs] ([Nom], [Role], [MotDePasse]) VALUES (@Nom, @Rol" +
+                "e, @MotDePasse);\r\nSELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs " +
+                "WHERE (UtilisateurID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MotDePasse", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MotDePasse", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Utilisateurs] SET [Nom] = @Nom, [Role] = @Role, [MotDePasse] = @MotDePasse WHERE (([UtilisateurID] = @Original_UtilisateurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_MotDePasse = 1 AND [MotDePasse] IS NULL) OR ([MotDePasse] = @Original_MotDePasse)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Utilisateurs] SET [Nom] = @Nom, [Role] = @Role, [MotDePasse] = @MotDePasse WHERE (([UtilisateurID] = @Original_UtilisateurID) AND ((@IsNull_Nom = 1 AND [Nom] IS NULL) OR ([Nom] = @Original_Nom)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_MotDePasse = 1 AND [MotDePasse] IS NULL) OR ([MotDePasse] = @Original_MotDePasse)));
 SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (UtilisateurID = @UtilisateurID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6758,7 +7223,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6767,7 +7232,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        UtilisateurID, Nom, Role, MotDePasse\r\nFROM            Utilisateurs";
+            this._commandCollection[0].CommandText = "SELECT UtilisateurID, Nom, Role, MotDePasse FROM dbo.Utilisateurs";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6775,7 +7240,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.UtilisateursDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.UtilisateursDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6788,9 +7253,9 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.UtilisateursDataTable GetData() {
+        public virtual Pharma_AppDataSet.UtilisateursDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.UtilisateursDataTable dataTable = new Pharma_ProjDataSet.UtilisateursDataTable();
+            Pharma_AppDataSet.UtilisateursDataTable dataTable = new Pharma_AppDataSet.UtilisateursDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6798,14 +7263,14 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.UtilisateursDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.UtilisateursDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Utilisateurs");
         }
         
@@ -7114,7 +7579,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Ventes] WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Ventes] WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VenteID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VenteID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7131,7 +7596,7 @@ SELECT UtilisateurID, Nom, Role, MotDePasse FROM Utilisateurs WHERE (Utilisateur
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_QuantitéVendue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuantitéVendue", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Ventes] ([Date], [ClientID], [Total], [Réduction], [MédicamentID], [QuantitéVendue]) VALUES (@Date, @ClientID, @Total, @Réduction, @MédicamentID, @QuantitéVendue);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Ventes] ([Date], [ClientID], [Total], [Réduction], [MédicamentID], [QuantitéVendue]) VALUES (@Date, @ClientID, @Total, @Réduction, @MédicamentID, @QuantitéVendue);
 SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FROM Ventes WHERE (VenteID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7142,7 +7607,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuantitéVendue", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "QuantitéVendue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Ventes] SET [Date] = @Date, [ClientID] = @ClientID, [Total] = @Total, [Réduction] = @Réduction, [MédicamentID] = @MédicamentID, [QuantitéVendue] = @QuantitéVendue WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Ventes] SET [Date] = @Date, [ClientID] = @ClientID, [Total] = @Total, [Réduction] = @Réduction, [MédicamentID] = @MédicamentID, [QuantitéVendue] = @QuantitéVendue WHERE (([VenteID] = @Original_VenteID) AND ((@IsNull_Date = 1 AND [Date] IS NULL) OR ([Date] = @Original_Date)) AND ((@IsNull_ClientID = 1 AND [ClientID] IS NULL) OR ([ClientID] = @Original_ClientID)) AND ((@IsNull_Total = 1 AND [Total] IS NULL) OR ([Total] = @Original_Total)) AND ((@IsNull_Réduction = 1 AND [Réduction] IS NULL) OR ([Réduction] = @Original_Réduction)) AND ((@IsNull_MédicamentID = 1 AND [MédicamentID] IS NULL) OR ([MédicamentID] = @Original_MédicamentID)) AND ((@IsNull_QuantitéVendue = 1 AND [QuantitéVendue] IS NULL) OR ([QuantitéVendue] = @Original_QuantitéVendue)));
 SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FROM Ventes WHERE (VenteID = @VenteID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7171,7 +7636,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_ProjConnectionString;
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7180,8 +7645,8 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVe" +
-                "ndue\r\nFROM            Ventes";
+            this._commandCollection[0].CommandText = "SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendue FR" +
+                "OM dbo.Ventes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7189,7 +7654,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(Pharma_ProjDataSet.VentesDataTable dataTable) {
+        public virtual int Fill(Pharma_AppDataSet.VentesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7202,9 +7667,9 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Pharma_ProjDataSet.VentesDataTable GetData() {
+        public virtual Pharma_AppDataSet.VentesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            Pharma_ProjDataSet.VentesDataTable dataTable = new Pharma_ProjDataSet.VentesDataTable();
+            Pharma_AppDataSet.VentesDataTable dataTable = new Pharma_AppDataSet.VentesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7212,14 +7677,14 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet.VentesDataTable dataTable) {
+        public virtual int Update(Pharma_AppDataSet.VentesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Pharma_ProjDataSet dataSet) {
+        public virtual int Update(Pharma_AppDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Ventes");
         }
         
@@ -7482,6 +7947,294 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class EtatDesStocksTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public EtatDesStocksTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "EtatDesStocks";
+            tableMapping.ColumnMappings.Add("MédicamentID", "MédicamentID");
+            tableMapping.ColumnMappings.Add("QuantitéTotale", "QuantitéTotale");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT MédicamentID, QuantitéTotale FROM dbo.EtatDesStocks";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Pharma_AppDataSet.EtatDesStocksDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual Pharma_AppDataSet.EtatDesStocksDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            Pharma_AppDataSet.EtatDesStocksDataTable dataTable = new Pharma_AppDataSet.EtatDesStocksDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class QueriesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.IDbCommand[] _commandCollection;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.IDbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.IDbCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.AjouterAuStock";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MédicamentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuantitéAjoutée", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateEntrée", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Connection = new global::System.Data.SqlClient.SqlConnection(global::Medina_Medix_Pharma_Proj.Properties.Settings.Default.Pharma_AppConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandText = "dbo.VendreMedicament";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MédicamentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[1])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@QuantitéVendue", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int AjouterAuStock(global::System.Nullable<int> MédicamentID, global::System.Nullable<int> QuantitéAjoutée, global::System.Nullable<global::System.DateTime> DateEntrée) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[0]));
+            if ((MédicamentID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(MédicamentID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((QuantitéAjoutée.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(QuantitéAjoutée.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DateEntrée.HasValue == true)) {
+                command.Parameters[3].Value = ((System.DateTime)(DateEntrée.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int VendreMedicament(global::System.Nullable<int> MédicamentID, global::System.Nullable<int> QuantitéVendue) {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[1]));
+            if ((MédicamentID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(MédicamentID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((QuantitéVendue.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(QuantitéVendue.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7710,7 +8463,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(Pharma_ProjDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(Pharma_AppDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -7783,7 +8536,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(Pharma_ProjDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(Pharma_AppDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clientsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Clients.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -7849,7 +8602,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(Pharma_ProjDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(Pharma_AppDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._ventesTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Ventes.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -7939,7 +8692,7 @@ SELECT VenteID, Date, ClientID, Total, Réduction, MédicamentID, QuantitéVendu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(Pharma_ProjDataSet dataSet) {
+        public virtual int UpdateAll(Pharma_AppDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

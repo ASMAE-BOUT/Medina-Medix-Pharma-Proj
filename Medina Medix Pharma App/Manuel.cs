@@ -14,7 +14,7 @@ namespace Medina_Medix_Pharma_Proj
 
         private void ManuelForm_Load(object sender, EventArgs e)
         {
-            LoadPdfInBrowser(webBrowser1, @"D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\Manuel\Introduction.pdf");
+            LoadPdfInBrowser(webBrowser1, @"D:\Medina Medix Pharma Project 2024\Medina Medix Pharma App\Manuel\Introduction.pdf");
         }
 
         private void LoadPdfInBrowser(WebBrowser browser, string filePath)
@@ -37,13 +37,13 @@ namespace Medina_Medix_Pharma_Proj
             switch (selectedTab)
             {
                 case "tabPage2":
-                    pdfPath = @"D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\Manuel\Introduction.pdf";
+                    pdfPath = @"D:\Medina Medix Pharma Project 2024\Medina Medix Pharma App\Manuel\Introduction.pdf";
                     break;
                 case "tabPage3":
-                    pdfPath = @"D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\Manuel\Configuration Requise.pdf";
+                    pdfPath = @"D:\Medina Medix Pharma Project 2024\Medina Medix Pharma App\Manuel\Configuration Requise.pdf";
                     break;
                 case "tabPage4":
-                    pdfPath = @"D:\C# Projects\Medina Medix Pharma\Medina-Medix-Pharma-Proj\Manuel\Utilisation des Fonctionnalités Clés.pdf";
+                    pdfPath = @"D:\Medina Medix Pharma Project 2024\Medina Medix Pharma App\Manuel\Utilisation des Fonctionnalités Clés.pdf";
                     break;
             }
 

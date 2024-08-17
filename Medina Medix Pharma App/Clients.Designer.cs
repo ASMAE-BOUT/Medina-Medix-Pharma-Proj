@@ -49,8 +49,8 @@ namespace Medina_Medix_Pharma_Proj
             this.réductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pharmaProjDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSet();
-            this.clientsTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.ClientsTableAdapter();
+            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_AppDataSet();
+            this.clientsTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.ClientsTableAdapter();
             this.btnAjouterClient = new System.Windows.Forms.Button();
             this.btnSupprimerClient = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
@@ -397,9 +397,9 @@ namespace Medina_Medix_Pharma_Proj
         private System.Windows.Forms.TextBox txtRéduction;
         private System.Windows.Forms.DataGridView dgvClients;
         private System.Windows.Forms.BindingSource pharmaProjDataSetBindingSource;
-        private Pharma_ProjDataSet pharma_ProjDataSet;
+        private Pharma_AppDataSet pharma_ProjDataSet;
         private System.Windows.Forms.BindingSource clientsBindingSource;
-        private Pharma_ProjDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
+        private Pharma_AppDataSetTableAdapters.ClientsTableAdapter clientsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adresseDataGridViewTextBoxColumn;

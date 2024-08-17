@@ -71,8 +71,8 @@ namespace Medina_Medix_Pharma_Proj
             this.dateDExpirationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.médicamentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pharmaProjDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSet();
-            this.médicamentsTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.MédicamentsTableAdapter();
+            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_AppDataSet();
+            this.médicamentsTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.MédicamentsTableAdapter();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
@@ -604,9 +604,9 @@ namespace Medina_Medix_Pharma_Proj
         private System.Windows.Forms.TextBox txtTauxDePriseEnCharge;
         private System.Windows.Forms.DataGridView dgvMedicaments;
         private System.Windows.Forms.BindingSource pharmaProjDataSetBindingSource;
-        private Pharma_ProjDataSet pharma_ProjDataSet;
+        private Pharma_AppDataSet pharma_ProjDataSet;
         private System.Windows.Forms.BindingSource médicamentsBindingSource;
-        private Pharma_ProjDataSetTableAdapters.MédicamentsTableAdapter médicamentsTableAdapter;
+        private Pharma_AppDataSetTableAdapters.MédicamentsTableAdapter médicamentsTableAdapter;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Button btnModifier;

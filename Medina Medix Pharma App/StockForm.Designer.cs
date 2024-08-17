@@ -43,8 +43,8 @@
             this.quantitéDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateEntréeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stocksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSet();
-            this.stocksTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_ProjDataSetTableAdapters.StocksTableAdapter();
+            this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_AppDataSet();
+            this.stocksTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.StocksTableAdapter();
             this.btnAjouter = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -321,9 +321,9 @@
         private System.Windows.Forms.ComboBox cmbMedicamentID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStocks;
-        private Pharma_ProjDataSet pharma_ProjDataSet;
+        private Pharma_AppDataSet pharma_ProjDataSet;
         private System.Windows.Forms.BindingSource stocksBindingSource;
-        private Pharma_ProjDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
+        private Pharma_AppDataSetTableAdapters.StocksTableAdapter stocksTableAdapter;
         private System.Windows.Forms.Button btnAjouter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
