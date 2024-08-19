@@ -174,3 +174,9 @@ ALTER TABLE Utilisateurs
 ADD CONSTRAINT chk_Role CHECK (Role IN ('Pharmacien', 'Manager'));
 
 
+ALTER TABLE Utilisateurs
+DROP CONSTRAINT chk_Role;
+
+ALTER TABLE Utilisateurs
+ADD CONSTRAINT chk_Role CHECK (Role IN ('Pharmacien', 'Manager', 'Docteur'));
+
