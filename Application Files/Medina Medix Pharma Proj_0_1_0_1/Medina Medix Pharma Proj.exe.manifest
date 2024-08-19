@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Medina Medix Pharma Proj.exe" version="0.1.0.1" publicKeyToken="4f2aed7ca68e5d4f" language="fr" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Medina Medix Pharma Proj" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Medina Medix Pharma Proj.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Options du manifeste de contrôle de compte d'utilisateur
+             Si vous souhaitez modifier le niveau du contrôle de compte d'utilisateur Windows, remplacez le 
+             nœud requestedExecutionLevel par l'une des propositions suivantes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            La spécification de l'élément requestedExecutionLevel désactive la virtualisation de fichiers et du Registre. 
+            Supprimez cet élément si votre application a besoin de la virtualisation pour des
+            raisons de compatibilité descendante.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Guna.UI2.dll" size="2161544">
+      <assemblyIdentity name="Guna.UI2" version="2.0.4.6" publicKeyToken="8B9D14AA5142E261" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>msi2XlwTKSqOVkGHwedEatxCMCKLZpODvXsHA1q5moI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Medina Medix Pharma Proj.exe" size="2771424">
+      <assemblyIdentity name="Medina Medix Pharma Proj" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>pGPtpWBhAie99CBdhad8pJja9AOGta8/Ml7P6YG0lrA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Medina Medix Pharma Proj.exe.config" size="826">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GTEstqfPDoo0Wlr9jBEYgIK17q+Q3KjCFT1sTvawqJ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Liste des versions de Windows pour lesquelles cette application a été testée,
+           et sur lesquelles elle doit fonctionner. Décommentez éléments appropriés,
+           et Windows va automatiquement sélectionner l'environnement le plus compatible. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-3HOM7H2\ASMAE" issuerKeyHash="2de0385f79cf69398ed06c3e22ebe63de57fc8ea" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>sQsOP3q0LlaB3JnDWFeDtEszk5bQNdmL7SMRIQPnMs0=</DigestValue></Reference></SignedInfo><SignatureValue>RGHF3drLwy9bNZmWLX6HhzKN4J4hSmCL2q9bAjsHl35zGePcpXD8T4YppnYRKwOX75VbNyzogB2prjgIrJO2CYz7aoqS/QlFFjM6dn5DHlrsjoCDm13wXxCjuzfEL9xjD0Wc9GpV1zuctEO2cf0HIonPWlkiI8v2FEtitjw7z1U=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>tr9iLi4yL7wlSbJESXExuHA/AuIygd9itqj82ZSQ8WWvcSEuYax4/I5/rtf1ZAOeZSU9G/diP4spHU/vAb7zkfA+DUjiCSbHYlxva7nAX5LcpSOdIiM8tMGMTKGdJqS9sbODIA/ZiOZ5kIam36Th9O9sjmtWZGRzpvZ8mJ4PqbU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="cd32e703211123ed8bd935d09693334bb4835758c399dc81562eb47a3f0e0bb1" Description="" Url=""><as:assemblyIdentity name="Medina Medix Pharma Proj.exe" version="0.1.0.1" publicKeyToken="4f2aed7ca68e5d4f" language="fr" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-3HOM7H2\ASMAE</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>DXHxiYbPEeF7ZJQUwm5rQDCNj+4ZnuU1xt795SbXdoY=</DigestValue></Reference></SignedInfo><SignatureValue>NMnkM0bQuSK7LzslPN0gAdq3WeFqflbEislovJ2p8LFPTHNlYB7mtk636rPEW+oLe2l81zL9LQb9YV6saqpihuHl2fcuy7MdNx+5Wfk9WPlD4aQuxmU9mub8cEVVzkGzRaGwPo+XL58qzfOdPpO5X74TSIk9Gfhb24V3lN0U5Zs=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>tr9iLi4yL7wlSbJESXExuHA/AuIygd9itqj82ZSQ8WWvcSEuYax4/I5/rtf1ZAOeZSU9G/diP4spHU/vAb7zkfA+DUjiCSbHYlxva7nAX5LcpSOdIiM8tMGMTKGdJqS9sbODIA/ZiOZ5kIam36Th9O9sjmtWZGRzpvZ8mJ4PqbU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQKttGDj6E85NDlPZiXbSjdTANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMASABPAE0ANwBIADIAXABBAFMATQBBAEUwHhcNMjQwODE3MTIzNTE3WhcNMjUwODE3MTgzNTE3WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADMASABPAE0ANwBIADIAXABBAFMATQBBAEUwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALa/Yi4uMi+8JUmyRElxMbhwPwLiMoHfYrao/NmUkPFlr3EhLmGsePyOf67X9WQDnmUlPRv3Yj+LKR1P7wG+85HwPg1I4gkmx2Jcb2u5wF+S3KUjnSIjPLTBjEyhnSakvbGzgyAP2YjmeZCGpt+k4fTvbI5rVmRkc6b2fJieD6m1AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAV6rdr8Hl+Y46OpiCfYjCpPBgKbvNZCMc+2Su8C2H6xI9z53/ICOLFYy6NaiTgR48xhb1NJIvPbi0zxe6Qm76F71NXXvwr+/BmmDA5FDyaJ+KkAmM3lHQlFkKmrceaGFRgrh12rtw7otaSww0qSOh1tuia0Af73DWF74rIBu6jdk=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
