@@ -8,11 +8,12 @@ namespace Medina_Medix_Pharma_Proj
     public partial class POSForm : Form
     {
         private string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
-        //internal EventHandler dgvVentes_SelectionChanged;
+        private string _role; 
 
-        public POSForm()
+        public POSForm(string role)
         {
             InitializeComponent();
+            _role = role; 
             //dgvVentes.SelectionChanged += new EventHandler(dgvVentes_SelectionChanged);
         }
 
@@ -24,7 +25,6 @@ namespace Medina_Medix_Pharma_Proj
             //this.stocksTableAdapter.Fill(this.pharma_ProjDataSet.Stocks);
             RemplirComboBoxClient();
             ChargerVentesDansDataGridView();
-
         }
 
         private void RemplirComboBoxClient()
@@ -33,7 +33,6 @@ namespace Medina_Medix_Pharma_Proj
             {
                 try
                 {
-                    // Remplir le ComboBox pour les clients
                     string queryClients = "SELECT ClientID, Nom FROM Clients";
                     using (SqlCommand cmdClients = new SqlCommand(queryClients, con))
                     {
@@ -45,7 +44,6 @@ namespace Medina_Medix_Pharma_Proj
                         cmbClientID.DataSource = dtClients;
                     }
 
-                    // Remplir le ComboBox pour les médicaments
                     string queryMedicaments = "SELECT MédicamentID, Désignation FROM Médicaments";
                     using (SqlCommand cmdMedicaments = new SqlCommand(queryMedicaments, con))
                     {
@@ -111,12 +109,10 @@ namespace Medina_Medix_Pharma_Proj
             }
         }
 
-
         private void cmbClientID_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbClientID.SelectedIndex != -1)
             {
-
                 int clientId = (int)cmbClientID.SelectedValue;
             }
         }
@@ -270,7 +266,7 @@ namespace Medina_Medix_Pharma_Proj
         private void btnRetour_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(_role); 
             dashboardForm.Show();
         }
 

@@ -5,10 +5,12 @@ namespace Medina_Medix_Pharma_Proj
 {
     public partial class ManuelForm : Form
     {
+        private string _role;
 
-        public ManuelForm()
+        public ManuelForm(string role)
         {
             InitializeComponent();
+            _role = role; // Store the role
             tabControl1.SelectedIndexChanged += new EventHandler(tabControl1_SelectedIndexChanged);
         }
 
@@ -58,7 +60,7 @@ namespace Medina_Medix_Pharma_Proj
         private void bttnRetour_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(_role); // Pass the role to DashboardForm
             dashboardForm.Show();
         }
 

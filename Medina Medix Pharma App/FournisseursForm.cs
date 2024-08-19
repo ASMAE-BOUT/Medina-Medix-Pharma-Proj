@@ -8,11 +8,13 @@ namespace Medina_Medix_Pharma_Proj
     public partial class FournisseursForm : Form
     {
         string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
+        private string userRole; 
 
-        public FournisseursForm()
+        public FournisseursForm(string role)
         {
             InitializeComponent();
             dgvFournisseurs.SelectionChanged += dgvFournisseurs_SelectionChanged;
+            userRole = role; 
         }
 
         private void FournisseursForm_Load(object sender, EventArgs e)
@@ -157,7 +159,7 @@ namespace Medina_Medix_Pharma_Proj
         private void bttnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(userRole); 
             dashboardForm.Show();
         }
 
@@ -172,4 +174,3 @@ namespace Medina_Medix_Pharma_Proj
         }
     }
 }
-

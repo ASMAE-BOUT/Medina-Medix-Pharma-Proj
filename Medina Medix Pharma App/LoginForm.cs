@@ -7,6 +7,7 @@ namespace Medina_Medix_Pharma_Proj
     public partial class LoginForm : Form
     {
         string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
+
         public LoginForm()
         {
             InitializeComponent();
@@ -22,11 +23,13 @@ namespace Medina_Medix_Pharma_Proj
             string nomUtilisateur = txtNomUtilisateur.Text;
             string motDePasse = txtMotDePasse.Text;
 
-            if (VerifierIdentifiantsUtilisateur(nomUtilisateur, motDePasse))
+            string role = VerifierIdentifiantsUtilisateur(nomUtilisateur, motDePasse);
+
+            if (!string.IsNullOrEmpty(role))
             {
                 MessageBox.Show("Connexion réussie !");
                 this.Hide();
-                DashboardForm dashboardForm = new DashboardForm();
+                DashboardForm dashboardForm = new DashboardForm(role); 
                 dashboardForm.Show();
             }
             else
@@ -35,27 +38,35 @@ namespace Medina_Medix_Pharma_Proj
             }
         }
 
-        private bool VerifierIdentifiantsUtilisateur(string nomUtilisateur, string motDePasse)
+        private string VerifierIdentifiantsUtilisateur(string nomUtilisateur, string motDePasse)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT COUNT(1) FROM Utilisateurs WHERE Nom = @Nom AND MotDePasse = @MotDePasse";
+                    string query = "SELECT Role FROM Utilisateurs WHERE Nom = @Nom AND MotDePasse = @MotDePasse";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Nom", nomUtilisateur.ToUpper());
                         cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0;
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return result.ToString(); 
+                        }
+                        else
+                        {
+                            return null; 
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
+                return null;
             }
         }
 

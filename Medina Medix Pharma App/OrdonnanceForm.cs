@@ -8,10 +8,12 @@ namespace Medina_Medix_Pharma_Proj
     public partial class OrdonnanceForm : Form
     {
         string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
+        private string _role; 
 
-        public OrdonnanceForm()
+        public OrdonnanceForm(string role) 
         {
             InitializeComponent();
+            _role = role; 
             dgvOrdonnances.SelectionChanged += dgvOrdonnances_SelectionChanged;
         }
 
@@ -181,7 +183,7 @@ namespace Medina_Medix_Pharma_Proj
         private void bttnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(_role); 
             dashboardForm.Show();
         }
     }

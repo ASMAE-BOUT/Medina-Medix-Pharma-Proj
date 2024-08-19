@@ -3,16 +3,17 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-
 namespace Medina_Medix_Pharma_Proj
 {
     public partial class MedicamentForm : Form
     {
         private string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
+        private string _role; 
 
-        public MedicamentForm()
+        public MedicamentForm(string role)
         {
             InitializeComponent();
+            _role = role; 
             dgvMedicaments.SelectionChanged += dgvMedicaments_SelectionChanged;
         }
 
@@ -87,7 +88,7 @@ namespace Medina_Medix_Pharma_Proj
                                 txtTauxDePriseEnCharge.Text = reader["TauxDePriseEnCharge"].ToString();
                                 txtCodeABarres.Text = reader["CodeÀBarres"].ToString();
 
-                                txtQuantiteMinimaleInput.Text = reader["QuantitéMinimale"].ToString(); // Set the input field with the current minimum quantity
+                                txtQuantiteMinimaleInput.Text = reader["QuantitéMinimale"].ToString(); 
 
                                 if (DateTime.TryParse(reader["DateDExpiration"].ToString(), out DateTime dateExpiration))
                                 {
@@ -146,63 +147,31 @@ namespace Medina_Medix_Pharma_Proj
         }
 
 
-
-        //private void btnChargerImage_Click(object sender, EventArgs e)
-        //{
-        //    OpenFileDialog openFileDialog = new OpenFileDialog
-        //    {
-        //        Filter = "Images Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png)|*.jpg; *.jpeg; *.gif; *.bmp; *.png"
-        //    };
-        //    if (openFileDialog.ShowDialog() == DialogResult.OK)
-        //    {
-        //        string filePath = openFileDialog.FileName;
-        //        byte[] imageBytes = File.ReadAllBytes(filePath);
-        //        int medicamentId = Convert.ToInt32(dgvMedicaments.CurrentRow.Cells["MédicamentID"].Value);
-
-        //        using (SqlConnection con = new SqlConnection(connectionString))
-        //        {
-        //            string query = "UPDATE Médicaments SET Photo = @Photo WHERE MédicamentID = @MédicamentID";
-        //            using (SqlCommand cmd = new SqlCommand(query, con))
-        //            {
-        //                cmd.Parameters.AddWithValue("@Photo", imageBytes);
-        //                cmd.Parameters.AddWithValue("@MédicamentID", medicamentId);
-
-        //                con.Open();
-        //                cmd.ExecuteNonQuery();
-        //                MessageBox.Show("Image chargée avec succès !");
-        //            }
-        //        }
-        //    }
-        //}
-
         private void btnAjouter_Click_1(object sender, EventArgs e)
         {
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                string query = "INSERT INTO Médicaments (Désignation, PrixAchat, PrixVente, QuantitéMinimale, QuantitéDisponible, Utilisations, ContreIndications, EffetsSecondaires, TauxDePriseEnCharge, CodeÀBarres, DateDExpiration) VALUES (@Désignation, @PrixAchat, @PrixVente, @QuantitéMinimale, @QuantitéDisponible, @Utilisations, @ContreIndications, @EffetsSecondaires, @TauxDePriseEnCharge, @CodeÀBarres, @DateDExpiration)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    string query = "INSERT INTO Médicaments (Désignation, PrixAchat, PrixVente, QuantitéMinimale, QuantitéDisponible, Utilisations, ContreIndications, EffetsSecondaires, TauxDePriseEnCharge, CodeÀBarres, DateDExpiration) VALUES (@Désignation, @PrixAchat, @PrixVente, @QuantitéMinimale, @QuantitéDisponible, @Utilisations, @ContreIndications, @EffetsSecondaires, @TauxDePriseEnCharge, @CodeÀBarres, @DateDExpiration)";
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
+                    cmd.Parameters.AddWithValue("@Désignation", txtDesignation.Text);
+                    cmd.Parameters.AddWithValue("@PrixAchat", decimal.Parse(txtPrixAchat.Text));
+                    cmd.Parameters.AddWithValue("@PrixVente", decimal.Parse(txtPrixVente.Text));
+                    cmd.Parameters.AddWithValue("@QuantitéMinimale", int.Parse(txtQuantiteMinimale.Text));
+                    cmd.Parameters.AddWithValue("@QuantitéDisponible", int.Parse(txtQuantiteDisponible.Text));
+                    cmd.Parameters.AddWithValue("@Utilisations", txtUtilisations.Text);
+                    cmd.Parameters.AddWithValue("@ContreIndications", txtContreIndications.Text);
+                    cmd.Parameters.AddWithValue("@EffetsSecondaires", txtEffetsSecondaires.Text);
+                    cmd.Parameters.AddWithValue("@TauxDePriseEnCharge", decimal.Parse(txtTauxDePriseEnCharge.Text));
+                    cmd.Parameters.AddWithValue("@CodeÀBarres", txtCodeABarres.Text);
+                    cmd.Parameters.AddWithValue("@DateDExpiration", DateTime.Parse(txtDateDExpiration.Text));
 
-                        cmd.Parameters.AddWithValue("@Désignation", txtDesignation.Text);
-                        cmd.Parameters.AddWithValue("@PrixAchat", decimal.Parse(txtPrixAchat.Text));
-                        cmd.Parameters.AddWithValue("@PrixVente", decimal.Parse(txtPrixVente.Text));
-                        cmd.Parameters.AddWithValue("@QuantitéMinimale", int.Parse(txtQuantiteMinimale.Text));
-                        cmd.Parameters.AddWithValue("@QuantitéDisponible", int.Parse(txtQuantiteDisponible.Text));
-                        cmd.Parameters.AddWithValue("@Utilisations", txtUtilisations.Text);
-                        cmd.Parameters.AddWithValue("@ContreIndications", txtContreIndications.Text);
-                        cmd.Parameters.AddWithValue("@EffetsSecondaires", txtEffetsSecondaires.Text);
-                        cmd.Parameters.AddWithValue("@TauxDePriseEnCharge", decimal.Parse(txtTauxDePriseEnCharge.Text));
-                        cmd.Parameters.AddWithValue("@CodeÀBarres", txtCodeABarres.Text);
-                        cmd.Parameters.AddWithValue("@DateDExpiration", DateTime.Parse(txtDateDExpiration.Text));
-
-                        con.Open();
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Médicament ajouté avec succès !");
-                    }
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Médicament ajouté avec succès !");
                 }
-                ChargerMedicamentsDansDataGridView();
             }
+            ChargerMedicamentsDansDataGridView();
         }
 
         private void btnModifier_Click_1(object sender, EventArgs e)
@@ -269,7 +238,7 @@ namespace Medina_Medix_Pharma_Proj
         private void btnChargerImage_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(_role); 
             dashboardForm.Show();
         }
 
@@ -307,21 +276,5 @@ namespace Medina_Medix_Pharma_Proj
             }
             ChargerMedicamentsDansDataGridView();
         }
-
     }
 }
-
-
-
-//private void txtEffetsSecondaires_TextChanged(object sender, EventArgs e)
-//        {
-
-//        }
-
-//        private void MedicamentForm_Load(object sender, EventArgs e)
-//        {
-//            this.médicamentsTableAdapter.Fill(this.pharma_ProjDataSet.Médicaments);
-
-//        }
-//    }
-//}

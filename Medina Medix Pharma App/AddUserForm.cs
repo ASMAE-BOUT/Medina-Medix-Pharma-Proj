@@ -9,14 +9,14 @@ namespace Medina_Medix_Pharma_Proj
     {
         string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
 
-        private void AddUserForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public AddUserForm()
         {
             InitializeComponent();
+        }
+
+        private void AddUserForm_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void AjouterUtilisateur(string nomUtilisateur, string role, string motDePasse)
@@ -37,6 +37,9 @@ namespace Medina_Medix_Pharma_Proj
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Utilisateur ajouté avec succès !");
+
+                    DashboardForm dashboardForm = new DashboardForm(role);
+                    dashboardForm.Show();
                     this.Close();
                 }
             }
@@ -91,18 +94,6 @@ namespace Medina_Medix_Pharma_Proj
             this.Close();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
-
         }
-
-
-        //private void btnAjouterUtilisateur_Click_1(object sender, EventArgs e)
-        //{
-        //    string nomUtilisateur = txtNomUtilisateur.Text;
-        //    string role = txtRole.Text;
-        //    string motDePasse = txtMotDePasse.Text;
-
-        //    AjouterUtilisateur(nomUtilisateur, role, motDePasse);
-        //}
-
     }
 }

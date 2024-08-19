@@ -5,25 +5,42 @@ namespace Medina_Medix_Pharma_Proj
 {
     public partial class DashboardForm : Form
     {
-        public DashboardForm()
+        private string userRole;
+
+        public DashboardForm(string role)
         {
             InitializeComponent();
+            userRole = role;
         }
 
         private void DashboardForm_Load(object sender, EventArgs e)
         {
+            AjusterBoutonsSelonRole();
+        }
 
+        private void AjusterBoutonsSelonRole()
+        {
+            if (userRole.Equals("Pharmacien", StringComparison.OrdinalIgnoreCase))
+            {
+                btnStock.Enabled = false;
+                btnFournisseur.Enabled = false;
+                btnOrdonnance.Enabled = false;
+
+                btnStock.BackColor = System.Drawing.Color.Gray;
+                btnFournisseur.BackColor = System.Drawing.Color.Gray;
+                btnOrdonnance.BackColor = System.Drawing.Color.Gray;
+            }
         }
 
         private void btnMedicament_Click(object sender, EventArgs e)
         {
-            MedicamentForm medicamentForm = new MedicamentForm();
+            MedicamentForm medicamentForm = new MedicamentForm(userRole);
             medicamentForm.Show();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            Clients clientsForm = new Clients();
+            Clients clientsForm = new Clients(userRole);
             clientsForm.Show();
         }
 
@@ -36,32 +53,32 @@ namespace Medina_Medix_Pharma_Proj
 
         private void btnPOS_Click(object sender, EventArgs e)
         {
-            POSForm posForm = new POSForm();
+            POSForm posForm = new POSForm(userRole);
             posForm.Show();
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
-            StockForm stockForm = new StockForm();
+            StockForm stockForm = new StockForm(userRole);
             stockForm.Show();
         }
 
         private void btnOrdonnance_Click(object sender, EventArgs e)
         {
-            OrdonnanceForm ordonnanceForm = new OrdonnanceForm();
+            OrdonnanceForm ordonnanceForm = new OrdonnanceForm(userRole);
             ordonnanceForm.Show();
         }
 
         private void btnFournisseur_Click(object sender, EventArgs e)
         {
-            FournisseursForm fournisseursForm = new FournisseursForm();
+            FournisseursForm fournisseursForm = new FournisseursForm(userRole);
             fournisseursForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            ManuelForm manuelForm = new ManuelForm();
+            ManuelForm manuelForm = new ManuelForm(userRole);
             manuelForm.Show();
         }
     }

@@ -5,15 +5,16 @@ using System.Windows.Forms;
 
 namespace Medina_Medix_Pharma_Proj
 {
-
     public partial class Clients : Form
     {
         string connectionString = "Data Source=DESKTOP-3HOM7H2\\SQLEXPRESS;Initial Catalog=Pharma_App;Integrated Security=True;TrustServerCertificate=True";
+        private string userRole; 
 
-        public Clients()
+        public Clients(string role)
         {
             InitializeComponent();
             dgvClients.SelectionChanged += dgvClients_SelectionChanged;
+            userRole = role; 
         }
 
         private void Clients_Load(object sender, EventArgs e)
@@ -71,7 +72,6 @@ namespace Medina_Medix_Pharma_Proj
                 txtRéduction.Text = dgvClients.CurrentRow.Cells[4].Value.ToString();
             }
         }
-
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -149,50 +149,6 @@ namespace Medina_Medix_Pharma_Proj
             }
         }
 
-        //private void btnSupprimerClient_Click(object sender, EventArgs e)
-        //{
-        //    if (dgvClients.CurrentRow != null)
-        //    {
-        //        string nomClient = dgvClients.CurrentRow.Cells["Nom"].Value.ToString(); // Assurez-vous que "Nom" correspond au nom de la colonne dans le DataGridView
-        //        SupprimerClientParNom(nomClient);
-        //        ChargerClientsDansDataGridView();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Veuillez sélectionner un client à supprimer.");
-        //    }
-        //}
-
-        //private void SupprimerClientParNom(string nom)
-        //{
-        //    try
-        //    {
-        //        using (SqlConnection con = new SqlConnection(connectionString))
-        //        {
-        //            con.Open();
-        //            string query = "DELETE FROM Clients WHERE Nom = @Nom";
-        //            using (SqlCommand cmd = new SqlCommand(query, con))
-        //            {
-        //                cmd.Parameters.AddWithValue("@Nom", nom);
-        //                int rowsAffected = cmd.ExecuteNonQuery();
-        //                if (rowsAffected > 0)
-        //                {
-        //                    MessageBox.Show("Client supprimé avec succès !");
-        //                }
-        //                else
-        //                {
-        //                    MessageBox.Show("Aucun client trouvé avec ce nom.");
-        //                }
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erreur lors de la suppression du client : " + ex.Message);
-        //    }
-        //}
-
-
         private void btnSupprimerClient_Click(object sender, EventArgs e)
         {
             if (dgvClients.CurrentRow != null)
@@ -227,7 +183,7 @@ namespace Medina_Medix_Pharma_Proj
         private void bttnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
-            DashboardForm dashboardForm = new DashboardForm();
+            DashboardForm dashboardForm = new DashboardForm(userRole); 
             dashboardForm.Show();
         }
 
