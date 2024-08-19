@@ -5,15 +5,8 @@ namespace Medina_Medix_Pharma_Proj
 {
     partial class AddUserForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -25,16 +18,12 @@ namespace Medina_Medix_Pharma_Proj
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomUtilisateur = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtRole = new System.Windows.Forms.TextBox();
+            this.cmbRole = new System.Windows.Forms.ComboBox();  
             this.label3 = new System.Windows.Forms.Label();
             this.txtMotDePasse = new System.Windows.Forms.TextBox();
             this.btnAjouterUtilisateur = new System.Windows.Forms.Button();
@@ -58,7 +47,7 @@ namespace Medina_Medix_Pharma_Proj
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 18);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Entrez le nom d\'utilisateur :";
+            this.label1.Text = "Entrez le nom d'utilisateur :";
             // 
             // txtNomUtilisateur
             // 
@@ -80,13 +69,13 @@ namespace Medina_Medix_Pharma_Proj
             this.label2.TabIndex = 5;
             this.label2.Text = "Entrez votre rôle :";
             // 
-            // txtRole
+            // cmbRole
             // 
-            this.txtRole.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRole.Location = new System.Drawing.Point(272, 50);
-            this.txtRole.Name = "txtRole";
-            this.txtRole.Size = new System.Drawing.Size(206, 23);
-            this.txtRole.TabIndex = 4;
+            this.cmbRole.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRole.Location = new System.Drawing.Point(272, 50);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(206, 23);
+            this.cmbRole.TabIndex = 4;
             // 
             // label3
             // 
@@ -216,7 +205,7 @@ namespace Medina_Medix_Pharma_Proj
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtRole);
+            this.Controls.Add(this.cmbRole);  
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNomUtilisateur);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -228,20 +217,14 @@ namespace Medina_Medix_Pharma_Proj
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
-        public AddUserForm(Label label1)
-        {
-            this.label1 = label1;
-        }
-
         private Label label1;
         private TextBox txtNomUtilisateur;
         private Label label2;
-        private TextBox txtRole;
+        private ComboBox cmbRole;  
         private Label label3;
         private TextBox txtMotDePasse;
         private Button btnAjouterUtilisateur;

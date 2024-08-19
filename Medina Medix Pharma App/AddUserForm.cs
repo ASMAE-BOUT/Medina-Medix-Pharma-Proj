@@ -12,6 +12,11 @@ namespace Medina_Medix_Pharma_Proj
         public AddUserForm()
         {
             InitializeComponent();
+
+            cmbRole.Items.Add("Pharmacien");
+            cmbRole.Items.Add("Manager");
+            cmbRole.Items.Add("Docteur");
+            cmbRole.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void AddUserForm_Load(object sender, EventArgs e)
@@ -30,9 +35,7 @@ namespace Medina_Medix_Pharma_Proj
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Nom", nomUtilisateur.ToUpper());
-
-                        string roleFormatted = role.Length > 0 ? char.ToUpper(role[0]) + role.Substring(1).ToLower() : "";
-                        cmd.Parameters.AddWithValue("@Role", roleFormatted);
+                        cmd.Parameters.AddWithValue("@Role", role);
                         cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
                         cmd.ExecuteNonQuery();
                     }
@@ -70,9 +73,10 @@ namespace Medina_Medix_Pharma_Proj
         private void btnAjouterUtilisateur_Click_1(object sender, EventArgs e)
         {
             string nomUtilisateur = txtNomUtilisateur.Text;
-            string role = txtRole.Text;
+            string role = cmbRole.SelectedItem.ToString(); 
             string motDePasse = txtMotDePasse.Text;
             string confirmMotDePasse = txtConfirmMotDePasse.Text;
+
             if (motDePasse != confirmMotDePasse)
             {
                 MessageBox.Show("Les mots de passe ne correspondent pas.");

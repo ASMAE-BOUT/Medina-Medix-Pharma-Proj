@@ -170,3 +170,7 @@ UPDATE Ventes
 SET ClientID = (SELECT TOP 1 ClientID FROM Clients);
 
 
+ALTER TABLE Utilisateurs
+ADD CONSTRAINT chk_Role CHECK (Role IN ('Pharmacien', 'Manager'));
+
+

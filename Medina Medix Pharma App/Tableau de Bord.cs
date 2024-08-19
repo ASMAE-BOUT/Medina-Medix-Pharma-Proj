@@ -26,10 +26,21 @@ namespace Medina_Medix_Pharma_Proj
                 btnFournisseur.Enabled = false;
                 btnOrdonnance.Enabled = false;
 
-                btnStock.BackColor = System.Drawing.Color.Gray;
-                btnFournisseur.BackColor = System.Drawing.Color.Gray;
-                btnOrdonnance.BackColor = System.Drawing.Color.Gray;
+                btnStock.BackColor = System.Drawing.Color.LightGray;
+                btnFournisseur.BackColor = System.Drawing.Color.LightGray;
+                btnOrdonnance.BackColor = System.Drawing.Color.LightGray;
             }
+            else if (userRole.Equals("Docteur", StringComparison.OrdinalIgnoreCase))
+            {
+                btnStock.Enabled = false;
+                btnFournisseur.Enabled = false;
+                btnPOS.Enabled = false;
+
+                btnStock.BackColor = System.Drawing.Color.LightGray;
+                btnFournisseur.BackColor = System.Drawing.Color.LightGray;
+                btnOrdonnance.BackColor = System.Drawing.Color.LightGray;
+            }
+
         }
 
         private void btnMedicament_Click(object sender, EventArgs e)

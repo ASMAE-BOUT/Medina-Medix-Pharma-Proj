@@ -11,6 +11,10 @@ namespace Medina_Medix_Pharma_Proj
         public LoginForm()
         {
             InitializeComponent();
+            cmbRole.Items.Add("Pharmacien");
+            cmbRole.Items.Add("Manager");
+            cmbRole.Items.Add("Docteur");
+            cmbRole.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -22,51 +26,44 @@ namespace Medina_Medix_Pharma_Proj
         {
             string nomUtilisateur = txtNomUtilisateur.Text;
             string motDePasse = txtMotDePasse.Text;
+            string role = cmbRole.SelectedItem?.ToString();  
 
-            string role = VerifierIdentifiantsUtilisateur(nomUtilisateur, motDePasse);
-
-            if (!string.IsNullOrEmpty(role))
+            if (VerifierIdentifiantsUtilisateur(nomUtilisateur, motDePasse, role))
             {
                 MessageBox.Show("Connexion réussie !");
                 this.Hide();
-                DashboardForm dashboardForm = new DashboardForm(role); 
+                DashboardForm dashboardForm = new DashboardForm(role);
                 dashboardForm.Show();
             }
             else
             {
-                MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.");
+                MessageBox.Show("Nom d'utilisateur, mot de passe ou rôle incorrect.");
             }
         }
 
-        private string VerifierIdentifiantsUtilisateur(string nomUtilisateur, string motDePasse)
+        private bool VerifierIdentifiantsUtilisateur(string nomUtilisateur, string motDePasse, string role)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
-                    string query = "SELECT Role FROM Utilisateurs WHERE Nom = @Nom AND MotDePasse = @MotDePasse";
+                    string query = "SELECT COUNT(1) FROM Utilisateurs WHERE Nom = @Nom AND MotDePasse = @MotDePasse AND Role = @Role";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@Nom", nomUtilisateur.ToUpper());
                         cmd.Parameters.AddWithValue("@MotDePasse", motDePasse);
-                        object result = cmd.ExecuteScalar();
+                        cmd.Parameters.AddWithValue("@Role", role);
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                        if (result != null)
-                        {
-                            return result.ToString(); 
-                        }
-                        else
-                        {
-                            return null; 
-                        }
+                        return count > 0;
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return null;
+                return false;
             }
         }
 

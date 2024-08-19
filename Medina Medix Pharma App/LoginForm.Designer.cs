@@ -24,6 +24,8 @@ namespace Medina_Medix_Pharma_Proj
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMotDePasse = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cmbRole = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.labelRole = new System.Windows.Forms.Label();
             this.btnSeConnecter = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreerUtilisateur = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -88,6 +90,32 @@ namespace Medina_Medix_Pharma_Proj
             this.txtMotDePasse.TabIndex = 2;
             this.txtMotDePasse.UseSystemPasswordChar = true;
             // 
+            // cmbRole
+            // 
+            this.cmbRole.BackColor = System.Drawing.Color.Transparent;
+            this.cmbRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRole.FocusedColor = System.Drawing.Color.Empty;
+            this.cmbRole.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbRole.ItemHeight = 30;
+            this.cmbRole.Location = new System.Drawing.Point(73, 283);
+            this.cmbRole.Name = "cmbRole";
+            this.cmbRole.Size = new System.Drawing.Size(206, 36);
+            this.cmbRole.TabIndex = 5;
+            // 
+            // labelRole
+            // 
+            this.labelRole.AutoSize = true;
+            this.labelRole.BackColor = System.Drawing.Color.Transparent;
+            this.labelRole.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelRole.ForeColor = System.Drawing.Color.Black;
+            this.labelRole.Location = new System.Drawing.Point(70, 262);
+            this.labelRole.Name = "labelRole";
+            this.labelRole.Size = new System.Drawing.Size(34, 18);
+            this.labelRole.TabIndex = 4;
+            this.labelRole.Text = "Rôle";
+            // 
             // btnSeConnecter
             // 
             this.btnSeConnecter.BackColor = System.Drawing.Color.Transparent;
@@ -95,10 +123,10 @@ namespace Medina_Medix_Pharma_Proj
             this.btnSeConnecter.FillColor = System.Drawing.Color.Gray;
             this.btnSeConnecter.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSeConnecter.ForeColor = System.Drawing.Color.Black;
-            this.btnSeConnecter.Location = new System.Drawing.Point(73, 264);
+            this.btnSeConnecter.Location = new System.Drawing.Point(73, 323);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(206, 36);
-            this.btnSeConnecter.TabIndex = 4;
+            this.btnSeConnecter.TabIndex = 6;
             this.btnSeConnecter.Text = "Se Connecter";
             this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
@@ -109,10 +137,10 @@ namespace Medina_Medix_Pharma_Proj
             this.btnCreerUtilisateur.FillColor = System.Drawing.Color.Gray;
             this.btnCreerUtilisateur.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCreerUtilisateur.ForeColor = System.Drawing.Color.Black;
-            this.btnCreerUtilisateur.Location = new System.Drawing.Point(73, 306);
+            this.btnCreerUtilisateur.Location = new System.Drawing.Point(73, 365);
             this.btnCreerUtilisateur.Name = "btnCreerUtilisateur";
             this.btnCreerUtilisateur.Size = new System.Drawing.Size(206, 36);
-            this.btnCreerUtilisateur.TabIndex = 5;
+            this.btnCreerUtilisateur.TabIndex = 7;
             this.btnCreerUtilisateur.Text = "Nouveau Utilisateur";
             this.btnCreerUtilisateur.Click += new System.EventHandler(this.btnCreerUtilisateur_Click);
             // 
@@ -124,7 +152,7 @@ namespace Medina_Medix_Pharma_Proj
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(65, 36);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // label3
@@ -136,7 +164,7 @@ namespace Medina_Medix_Pharma_Proj
             this.label3.Location = new System.Drawing.Point(691, 426);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 18);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Medina Medix";
             // 
             // label4
@@ -148,7 +176,7 @@ namespace Medina_Medix_Pharma_Proj
             this.label4.Location = new System.Drawing.Point(148, 48);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(397, 27);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 10;
             this.label4.Text = "Système de Gestion de Medina Medix";
             // 
             // label5
@@ -160,7 +188,7 @@ namespace Medina_Medix_Pharma_Proj
             this.label5.Location = new System.Drawing.Point(295, 84);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 22);
-            this.label5.TabIndex = 9;
+            this.label5.TabIndex = 11;
             this.label5.Text = "Version 1.0";
             // 
             // button1
@@ -170,10 +198,10 @@ namespace Medina_Medix_Pharma_Proj
             this.button1.FillColor = System.Drawing.Color.Gray;
             this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(73, 347);
+            this.button1.Location = new System.Drawing.Point(73, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(206, 36);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 12;
             this.button1.Text = "Quitter";
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -192,6 +220,8 @@ namespace Medina_Medix_Pharma_Proj
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCreerUtilisateur);
             this.Controls.Add(this.btnSeConnecter);
+            this.Controls.Add(this.cmbRole);
+            this.Controls.Add(this.labelRole);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMotDePasse);
             this.Controls.Add(this.label1);
@@ -214,6 +244,8 @@ namespace Medina_Medix_Pharma_Proj
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna2TextBox txtMotDePasse;
+        private Guna2ComboBox cmbRole;  
+        private System.Windows.Forms.Label labelRole;  
         private Guna2Button btnSeConnecter;
         private Guna2Button btnCreerUtilisateur;
         private System.Windows.Forms.PictureBox pictureBox1;
