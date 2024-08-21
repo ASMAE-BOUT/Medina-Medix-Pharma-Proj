@@ -331,3 +331,11 @@ VALUES
 ('2023-09-02', 2, 100.00, 0.00, 2, 20), 
 ('2023-09-03', 3, 175.00, 10.00, 3, 15); 
 
+
+Select * from Clients
+Select * from Fournisseurs
+Select * from Stocks
+Select * from Ventes
+Select * from Ordonnances
+Select * from Utilisateurs
+Select * from Médicaments

@@ -172,5 +172,10 @@ namespace Medina_Medix_Pharma_Proj
         {
             // Optional: Add any specific logic needed when the text changes in the fournisseur name textbox.
         }
+
+        private void dgvFournisseurs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace Medina_Medix_Pharma_Proj
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtAdresse = new System.Windows.Forms.TextBox();
@@ -141,9 +142,17 @@ namespace Medina_Medix_Pharma_Proj
             this.dgvFournisseurs.AllowUserToAddRows = false;
             this.dgvFournisseurs.AllowUserToDeleteRows = false;
             this.dgvFournisseurs.AutoGenerateColumns = false;
-            this.dgvFournisseurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvFournisseurs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvFournisseurs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvFournisseurs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvFournisseurs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFournisseurs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFournisseurs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFournisseurs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fournisseurIDDataGridViewTextBoxColumn,
@@ -156,6 +165,7 @@ namespace Medina_Medix_Pharma_Proj
             this.dgvFournisseurs.Name = "dgvFournisseurs";
             this.dgvFournisseurs.Size = new System.Drawing.Size(538, 274);
             this.dgvFournisseurs.TabIndex = 0;
+            this.dgvFournisseurs.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFournisseurs_CellContentClick);
             this.dgvFournisseurs.SelectionChanged += new System.EventHandler(this.dgvFournisseurs_SelectionChanged);
             // 
             // fournisseurIDDataGridViewTextBoxColumn
@@ -164,28 +174,24 @@ namespace Medina_Medix_Pharma_Proj
             this.fournisseurIDDataGridViewTextBoxColumn.HeaderText = "FournisseurID";
             this.fournisseurIDDataGridViewTextBoxColumn.Name = "fournisseurIDDataGridViewTextBoxColumn";
             this.fournisseurIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fournisseurIDDataGridViewTextBoxColumn.Width = 118;
             // 
             // nomDataGridViewTextBoxColumn
             // 
             this.nomDataGridViewTextBoxColumn.DataPropertyName = "Nom";
             this.nomDataGridViewTextBoxColumn.HeaderText = "Nom";
             this.nomDataGridViewTextBoxColumn.Name = "nomDataGridViewTextBoxColumn";
-            this.nomDataGridViewTextBoxColumn.Width = 60;
             // 
             // contactDataGridViewTextBoxColumn
             // 
             this.contactDataGridViewTextBoxColumn.DataPropertyName = "Contact";
             this.contactDataGridViewTextBoxColumn.HeaderText = "Contact";
             this.contactDataGridViewTextBoxColumn.Name = "contactDataGridViewTextBoxColumn";
-            this.contactDataGridViewTextBoxColumn.Width = 80;
             // 
             // adresseDataGridViewTextBoxColumn
             // 
             this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
             this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
             this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            this.adresseDataGridViewTextBoxColumn.Width = 81;
             // 
             // fournisseursBindingSource
             // 

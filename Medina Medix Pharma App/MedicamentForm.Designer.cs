@@ -33,6 +33,7 @@ namespace Medina_Medix_Pharma_Proj
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDateDExpiration = new System.Windows.Forms.TextBox();
@@ -330,7 +331,19 @@ namespace Medina_Medix_Pharma_Proj
             // 
             this.dgvMedicaments.AllowUserToAddRows = false;
             this.dgvMedicaments.AllowUserToDeleteRows = false;
+            this.dgvMedicaments.AllowUserToResizeColumns = false;
+            this.dgvMedicaments.AllowUserToResizeRows = false;
             this.dgvMedicaments.AutoGenerateColumns = false;
+            this.dgvMedicaments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMedicaments.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicaments.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedicaments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMedicaments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.médicamentIDDataGridViewTextBoxColumn,
@@ -358,84 +371,84 @@ namespace Medina_Medix_Pharma_Proj
             this.médicamentIDDataGridViewTextBoxColumn.HeaderText = "ID";
             this.médicamentIDDataGridViewTextBoxColumn.Name = "médicamentIDDataGridViewTextBoxColumn";
             this.médicamentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.médicamentIDDataGridViewTextBoxColumn.Width = 50;
+            this.médicamentIDDataGridViewTextBoxColumn.Width = 45;
             // 
             // désignationDataGridViewTextBoxColumn
             // 
             this.désignationDataGridViewTextBoxColumn.DataPropertyName = "Désignation";
             this.désignationDataGridViewTextBoxColumn.HeaderText = "Titre";
             this.désignationDataGridViewTextBoxColumn.Name = "désignationDataGridViewTextBoxColumn";
-            this.désignationDataGridViewTextBoxColumn.Width = 80;
+            this.désignationDataGridViewTextBoxColumn.Width = 63;
             // 
             // prixAchatDataGridViewTextBoxColumn
             // 
             this.prixAchatDataGridViewTextBoxColumn.DataPropertyName = "PrixAchat";
             this.prixAchatDataGridViewTextBoxColumn.HeaderText = "PA";
             this.prixAchatDataGridViewTextBoxColumn.Name = "prixAchatDataGridViewTextBoxColumn";
-            this.prixAchatDataGridViewTextBoxColumn.Width = 50;
+            this.prixAchatDataGridViewTextBoxColumn.Width = 48;
             // 
             // prixVenteDataGridViewTextBoxColumn
             // 
             this.prixVenteDataGridViewTextBoxColumn.DataPropertyName = "PrixVente";
             this.prixVenteDataGridViewTextBoxColumn.HeaderText = "PV";
             this.prixVenteDataGridViewTextBoxColumn.Name = "prixVenteDataGridViewTextBoxColumn";
-            this.prixVenteDataGridViewTextBoxColumn.Width = 50;
+            this.prixVenteDataGridViewTextBoxColumn.Width = 49;
             // 
             // quantitéMinimaleDataGridViewTextBoxColumn
             // 
             this.quantitéMinimaleDataGridViewTextBoxColumn.DataPropertyName = "QuantitéMinimale";
             this.quantitéMinimaleDataGridViewTextBoxColumn.HeaderText = "Qté Min";
             this.quantitéMinimaleDataGridViewTextBoxColumn.Name = "quantitéMinimaleDataGridViewTextBoxColumn";
-            this.quantitéMinimaleDataGridViewTextBoxColumn.Width = 50;
+            this.quantitéMinimaleDataGridViewTextBoxColumn.Width = 80;
             // 
             // quantitéDisponibleDataGridViewTextBoxColumn
             // 
             this.quantitéDisponibleDataGridViewTextBoxColumn.DataPropertyName = "QuantitéDisponible";
             this.quantitéDisponibleDataGridViewTextBoxColumn.HeaderText = "Qté Dispo";
             this.quantitéDisponibleDataGridViewTextBoxColumn.Name = "quantitéDisponibleDataGridViewTextBoxColumn";
-            this.quantitéDisponibleDataGridViewTextBoxColumn.Width = 50;
+            this.quantitéDisponibleDataGridViewTextBoxColumn.Width = 91;
             // 
             // utilisationsDataGridViewTextBoxColumn
             // 
             this.utilisationsDataGridViewTextBoxColumn.DataPropertyName = "Utilisations";
             this.utilisationsDataGridViewTextBoxColumn.HeaderText = "Utilisations";
             this.utilisationsDataGridViewTextBoxColumn.Name = "utilisationsDataGridViewTextBoxColumn";
-            this.utilisationsDataGridViewTextBoxColumn.Width = 70;
+            this.utilisationsDataGridViewTextBoxColumn.Width = 102;
             // 
             // contreIndicationsDataGridViewTextBoxColumn
             // 
             this.contreIndicationsDataGridViewTextBoxColumn.DataPropertyName = "ContreIndications";
             this.contreIndicationsDataGridViewTextBoxColumn.HeaderText = "Ctre Indica";
             this.contreIndicationsDataGridViewTextBoxColumn.Name = "contreIndicationsDataGridViewTextBoxColumn";
-            this.contreIndicationsDataGridViewTextBoxColumn.Width = 70;
+            this.contreIndicationsDataGridViewTextBoxColumn.Width = 101;
             // 
             // effetsSecondairesDataGridViewTextBoxColumn
             // 
             this.effetsSecondairesDataGridViewTextBoxColumn.DataPropertyName = "EffetsSecondaires";
             this.effetsSecondairesDataGridViewTextBoxColumn.HeaderText = "Effets Secon";
             this.effetsSecondairesDataGridViewTextBoxColumn.Name = "effetsSecondairesDataGridViewTextBoxColumn";
-            this.effetsSecondairesDataGridViewTextBoxColumn.Width = 70;
+            this.effetsSecondairesDataGridViewTextBoxColumn.Width = 108;
             // 
             // tauxDePriseEnChargeDataGridViewTextBoxColumn
             // 
             this.tauxDePriseEnChargeDataGridViewTextBoxColumn.DataPropertyName = "TauxDePriseEnCharge";
             this.tauxDePriseEnChargeDataGridViewTextBoxColumn.HeaderText = "Taux PEC";
             this.tauxDePriseEnChargeDataGridViewTextBoxColumn.Name = "tauxDePriseEnChargeDataGridViewTextBoxColumn";
-            this.tauxDePriseEnChargeDataGridViewTextBoxColumn.Width = 50;
+            this.tauxDePriseEnChargeDataGridViewTextBoxColumn.Width = 89;
             // 
             // codeÀBarresDataGridViewTextBoxColumn
             // 
             this.codeÀBarresDataGridViewTextBoxColumn.DataPropertyName = "CodeÀBarres";
             this.codeÀBarresDataGridViewTextBoxColumn.HeaderText = "Code Barre";
             this.codeÀBarresDataGridViewTextBoxColumn.Name = "codeÀBarresDataGridViewTextBoxColumn";
-            this.codeÀBarresDataGridViewTextBoxColumn.Width = 70;
+            this.codeÀBarresDataGridViewTextBoxColumn.Width = 101;
             // 
             // dateDExpirationDataGridViewTextBoxColumn
             // 
             this.dateDExpirationDataGridViewTextBoxColumn.DataPropertyName = "DateDExpiration";
             this.dateDExpirationDataGridViewTextBoxColumn.HeaderText = "Date Expir";
             this.dateDExpirationDataGridViewTextBoxColumn.Name = "dateDExpirationDataGridViewTextBoxColumn";
-            this.dateDExpirationDataGridViewTextBoxColumn.Width = 70;
+            this.dateDExpirationDataGridViewTextBoxColumn.Width = 96;
             // 
             // médicamentsBindingSource
             // 

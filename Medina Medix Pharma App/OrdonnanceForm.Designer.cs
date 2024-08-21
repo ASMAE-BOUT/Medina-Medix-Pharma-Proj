@@ -18,6 +18,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
@@ -138,9 +139,17 @@
             this.dgvOrdonnances.AllowUserToAddRows = false;
             this.dgvOrdonnances.AllowUserToDeleteRows = false;
             this.dgvOrdonnances.AutoGenerateColumns = false;
-            this.dgvOrdonnances.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvOrdonnances.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgvOrdonnances.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrdonnances.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvOrdonnances.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrdonnances.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvOrdonnances.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrdonnances.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ordonnanceIDDataGridViewTextBoxColumn,
@@ -160,28 +169,24 @@
             this.ordonnanceIDDataGridViewTextBoxColumn.HeaderText = "OrdonnanceID";
             this.ordonnanceIDDataGridViewTextBoxColumn.Name = "ordonnanceIDDataGridViewTextBoxColumn";
             this.ordonnanceIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ordonnanceIDDataGridViewTextBoxColumn.Width = 120;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
             this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 60;
             // 
             // clientIDDataGridViewTextBoxColumn
             // 
             this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.Width = 81;
             // 
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.Width = 62;
             // 
             // ordonnancesBindingSource
             // 

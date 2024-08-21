@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtQuantiteVendue = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,6 +45,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvVentes = new System.Windows.Forms.DataGridView();
+            this.venteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MédicamentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QuantitéVendue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.réductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.pharma_ProjDataSet = new Medina_Medix_Pharma_Proj.Pharma_AppDataSet();
             this.ventesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,13 +68,6 @@
             this.ventesTableAdapter = new Medina_Medix_Pharma_Proj.Pharma_AppDataSetTableAdapters.VentesTableAdapter();
             this.ventesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pharmaProjDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.venteIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MédicamentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QuantitéVendue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.réductionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentes)).BeginInit();
@@ -221,6 +222,16 @@
             this.dgvVentes.AllowUserToAddRows = false;
             this.dgvVentes.AllowUserToDeleteRows = false;
             this.dgvVentes.AutoGenerateColumns = false;
+            this.dgvVentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVentes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvVentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.venteIDDataGridViewTextBoxColumn,
@@ -236,6 +247,49 @@
             this.dgvVentes.Size = new System.Drawing.Size(605, 269);
             this.dgvVentes.TabIndex = 0;
             this.dgvVentes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentes_CellContentClick);
+            // 
+            // venteIDDataGridViewTextBoxColumn
+            // 
+            this.venteIDDataGridViewTextBoxColumn.DataPropertyName = "VenteID";
+            this.venteIDDataGridViewTextBoxColumn.HeaderText = "VenteID";
+            this.venteIDDataGridViewTextBoxColumn.Name = "venteIDDataGridViewTextBoxColumn";
+            this.venteIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            // 
+            // MédicamentID
+            // 
+            this.MédicamentID.DataPropertyName = "MédicamentID";
+            this.MédicamentID.HeaderText = "Médicament";
+            this.MédicamentID.Name = "MédicamentID";
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            // 
+            // QuantitéVendue
+            // 
+            this.QuantitéVendue.DataPropertyName = "QuantitéVendue";
+            this.QuantitéVendue.HeaderText = "Qté Vendue";
+            this.QuantitéVendue.Name = "QuantitéVendue";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // réductionDataGridViewTextBoxColumn
+            // 
+            this.réductionDataGridViewTextBoxColumn.DataPropertyName = "Réduction";
+            this.réductionDataGridViewTextBoxColumn.HeaderText = "Réduction";
+            this.réductionDataGridViewTextBoxColumn.Name = "réductionDataGridViewTextBoxColumn";
             // 
             // ventesBindingSource2
             // 
@@ -362,55 +416,6 @@
             // 
             this.pharmaProjDataSetBindingSource.DataSource = this.pharma_ProjDataSet;
             this.pharmaProjDataSetBindingSource.Position = 0;
-            // 
-            // venteIDDataGridViewTextBoxColumn
-            // 
-            this.venteIDDataGridViewTextBoxColumn.DataPropertyName = "VenteID";
-            this.venteIDDataGridViewTextBoxColumn.HeaderText = "VenteID";
-            this.venteIDDataGridViewTextBoxColumn.Name = "venteIDDataGridViewTextBoxColumn";
-            this.venteIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.venteIDDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // clientIDDataGridViewTextBoxColumn
-            // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            this.clientIDDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // MédicamentID
-            // 
-            this.MédicamentID.DataPropertyName = "MédicamentID";
-            this.MédicamentID.HeaderText = "Médicament";
-            this.MédicamentID.Name = "MédicamentID";
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // QuantitéVendue
-            // 
-            this.QuantitéVendue.DataPropertyName = "QuantitéVendue";
-            this.QuantitéVendue.HeaderText = "Qté Vendue";
-            this.QuantitéVendue.Name = "QuantitéVendue";
-            this.QuantitéVendue.Width = 70;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // réductionDataGridViewTextBoxColumn
-            // 
-            this.réductionDataGridViewTextBoxColumn.DataPropertyName = "Réduction";
-            this.réductionDataGridViewTextBoxColumn.HeaderText = "Réduction";
-            this.réductionDataGridViewTextBoxColumn.Name = "réductionDataGridViewTextBoxColumn";
-            this.réductionDataGridViewTextBoxColumn.Width = 80;
             // 
             // POSForm
             // 
