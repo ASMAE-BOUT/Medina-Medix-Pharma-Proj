@@ -38,7 +38,7 @@ namespace Medina_Medix_Pharma_Proj
 
                 btnStock.BackColor = System.Drawing.Color.LightGray;
                 btnFournisseur.BackColor = System.Drawing.Color.LightGray;
-                btnOrdonnance.BackColor = System.Drawing.Color.LightGray;
+                btnPOS.BackColor = System.Drawing.Color.LightGray;
             }
 
         }
